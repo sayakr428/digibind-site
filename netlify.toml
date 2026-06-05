@@ -1,0 +1,21 @@
+# DigiBind Media — static site (no build step)
+[build]
+  publish = "."
+  command = ""
+
+# Clean URLs: /pricing serves pricing.html
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

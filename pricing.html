@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#f3f2ec" />
+
+<title>Pricing — DigiBind Media | Branding, Advertising &amp; Marketing Plans</title>
+<meta name="description" content="DigiBind Media pricing — three transparent monthly plans (Ignite, Amplify, Dominate) plus on-site Signature production. Zero markup on ad spend and creator costs. Build a custom estimate with our calculator." />
+<link rel="canonical" href="https://digibindmedia.com/pricing" />
+<meta name="robots" content="index, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: {
+    display:['Space Grotesk','sans-serif'], body:['Inter','sans-serif'], serif:['Cormorant Garamond','serif'], mono:['JetBrains Mono','monospace']
+  } } } };
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"OfferCatalog","name":"DigiBind Media Plans","itemListElement":[
+{"@type":"Offer","name":"Ignite","priceCurrency":"INR","price":"18000","description":"Build the foundation before you scale."},
+{"@type":"Offer","name":"Amplify","priceCurrency":"INR","price":"40000","description":"Organic content + paid distribution."},
+{"@type":"Offer","name":"Dominate","priceCurrency":"INR","price":"100000","description":"Full-stack growth engine across all platforms."}
+]}
+</script>
+
+<style>
+  :root{
+    --bg:#f3f2ec; --bg2:#eae9e1; --ink:#141318; --soft:#5d5c54;
+    --accent:#7c3aed; --accent2:#3b2a8c; --blue:#2f7fc4; --lime:#d8f263;
+    --card:#141318; --card-ink:#f3f2ec; --line:rgba(20,19,24,.12);
+  }
+  body.soul{
+    --bg:#070611; --bg2:#0e0c1c; --ink:#f1eefc; --soft:rgba(241,238,252,.6);
+    --accent:#a78bfa; --accent2:#8b5cf6; --blue:#6db4ff; --lime:#d8f263;
+    --card:#0e0c1c; --card-ink:#f1eefc; --line:rgba(241,238,252,.14);
+  }
+  html.lenis,html.lenis body{height:auto;}
+  .lenis.lenis-smooth{scroll-behavior:auto !important;}
+  *{ -ms-overflow-style:none; scrollbar-width:none; }
+  ::-webkit-scrollbar{ display:none; }
+  html{ overflow-x:hidden; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; overflow-x:hidden; max-width:100vw;
+    transition:background .7s cubic-bezier(.65,0,.35,1), color .7s cubic-bezier(.65,0,.35,1); }
+  @media(min-width:1024px){ body{cursor:none;} }
+  h1,h2,h3,.display{ font-family:'Space Grotesk',sans-serif; }
+  .soul-serif{ font-family:'Cormorant Garamond',serif; }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+
+  .reveal{ opacity:1; transform:none; }
+  html.ready .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  html.ready .reveal.in{ opacity:1; transform:none; }
+
+  #cursor{ position:fixed; left:0; top:0; width:92px; height:92px; transform:translate(-50%,-50%); pointer-events:none; z-index:9999; mix-blend-mode:difference; }
+  #cursor svg{ width:100%; height:100%; animation:spin 9s linear infinite; transition:scale .4s cubic-bezier(.16,1,.3,1); }
+  #cursor text{ fill:#fff; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:8.4px; letter-spacing:1.4px; text-transform:uppercase; }
+  #cur-dot{ position:absolute; left:50%; top:50%; width:7px; height:7px; border-radius:50%; background:#fff; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+  #cursor.link svg{ scale:.6; } #cursor.link #cur-dot{ width:16px; height:16px; }
+  @keyframes spin{ to{ rotate:360deg; } }
+  @media(max-width:1023px){ #cursor{ display:none; } }
+
+  .pill{ background:var(--accent); color:#fff; border-radius:999px; padding:.04em .36em .2em; display:inline-block; line-height:1.06; }
+  .grain{ position:fixed; inset:0; pointer-events:none; z-index:9998; opacity:.03;
+    background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)"/%3E%3C/svg%3E'); }
+
+  #soul-btn{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; flex:none; border:1px solid var(--line); background:transparent; color:var(--ink); font-size:18px; line-height:1; transition:transform .5s cubic-bezier(.16,1,.3,1), background .4s, color .4s; }
+  #soul-btn:hover{ transform:rotate(180deg); }
+  body.soul #soul-btn{ background:var(--lime); color:#141318; border-color:transparent; }
+  #logo-dark{ display:none; } body.soul #logo-light{ display:none; } body.soul #logo-dark{ display:block; }
+
+  #menu-btn{ display:flex; align-items:center; gap:9px; font-size:13px; font-weight:600; padding:10px 18px; border-radius:999px; background:var(--ink); color:var(--bg); }
+  #menu-btn .bars{ width:16px; height:10px; position:relative; }
+  #menu-btn .bars span{ position:absolute; left:0; width:16px; height:1.5px; background:currentColor; }
+  #menu-btn .bars span:nth-child(1){ top:0; } #menu-btn .bars span:nth-child(2){ bottom:0; }
+  #menu{ position:fixed; inset:0; z-index:60; background:var(--ink); color:var(--bg); display:flex; flex-direction:column; justify-content:center; padding:0 6vw;
+    clip-path:circle(0% at 92% 5%); transition:clip-path .7s cubic-bezier(.76,0,.24,1); pointer-events:none; }
+  #menu.open{ clip-path:circle(150% at 92% 5%); pointer-events:auto; }
+  .menu-link{ display:block; font-family:'Space Grotesk'; font-weight:600; letter-spacing:-.02em; line-height:1.08; font-size:clamp(2.6rem,11vw,7rem); opacity:.55; transition:opacity .3s, transform .5s cubic-bezier(.16,1,.3,1); }
+  .menu-link:hover{ opacity:1; transform:translateX(18px); }
+  .menu-idx{ font-size:.85rem; vertical-align:super; opacity:.5; margin-left:.4rem; font-family:'Inter'; }
+
+  /* Plan cards */
+  .plan{ display:flex; flex-direction:column; border-radius:24px; overflow:hidden; border:1px solid var(--line); background:var(--bg); }
+  .plan.featured{ box-shadow:0 36px 70px -28px rgba(124,58,237,.45); }
+  @media(min-width:1024px){ .plan.featured{ transform:scale(1.035); z-index:2; } }
+  .plan-head{ padding:1.8rem 1.9rem 2rem; color:#fff; }
+  .plan-light .plan-head{ background:var(--bg2); color:var(--ink); }
+  .plan-accent .plan-head{ background:var(--accent); color:#fff; }
+  .plan-dark .plan-head{ background:var(--card); color:var(--card-ink); }
+  .feat{ display:grid; grid-template-columns:22px 1fr 1.15fr; gap:.7rem; padding:.78rem 0; border-top:1px solid var(--line); align-items:start; }
+  .feat:first-child{ border-top:none; }
+  .chk{ width:18px; height:18px; border-radius:50%; background:var(--accent); color:#fff; font-size:11px; display:grid; place-items:center; margin-top:1px; }
+  .plan-foot{ margin-top:auto; }
+
+  .tp-row{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; padding:1.4rem 1.6rem; border-top:1px solid var(--line); }
+  .tp-row:first-child{ border-top:none; }
+  .tp-chip{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.04em; padding:.5rem .9rem; border-radius:999px; border:1px solid var(--accent); color:var(--accent); white-space:nowrap; }
+  .tp-chip.alt{ border-color:var(--line); color:var(--soft); }
+
+  /* Signature grid bg */
+  .sig{ position:relative; border-radius:28px; overflow:hidden; color:#fff;
+    background:radial-gradient(900px 600px at 75% 0%, rgba(124,58,237,.45), transparent 60%), #141318; }
+  .sig-grid{ position:absolute; inset:0; opacity:.5; pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size:46px 46px; }
+  .sig-row{ display:grid; grid-template-columns:18px 1fr; gap:.7rem; padding:.7rem 0; border-top:1px solid rgba(255,255,255,.1); }
+  .sig-row:first-of-type{ border-top:none; }
+
+  /* Calculator */
+  select.calc-in, .calc-in{ width:100%; padding:.9rem 1.1rem; border-radius:14px; border:1px solid var(--line); background:var(--bg); color:var(--ink);
+    font-family:'Inter'; font-size:.92rem; appearance:none; -webkit-appearance:none; cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; }
+  .addon{ border:1px solid var(--line); border-radius:14px; padding:1rem 1.1rem; cursor:pointer; transition:border-color .25s, background .25s; display:block; }
+  .addon:hover{ border-color:var(--accent); }
+  .addon.on{ border-color:var(--accent); background:rgba(124,58,237,.06); }
+  .addon-box{ width:20px; height:20px; border-radius:6px; border:1.5px solid var(--line); flex:none; display:grid; place-items:center; transition:.25s; }
+  .addon.on .addon-box{ background:var(--accent); border-color:var(--accent); }
+  .addon.included{ opacity:.7; cursor:not-allowed; }
+  .calc-sum{ position:sticky; top:88px; border-radius:24px; background:#141318; color:#f3f2ec; padding:1.8rem; }
+  .sum-row{ display:flex; justify-content:space-between; align-items:center; padding:.7rem 0; border-top:1px solid rgba(255,255,255,.1); font-size:.9rem; }
+  .sum-row:first-of-type{ border-top:none; }
+  .kick{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; color:var(--accent); text-transform:uppercase; }
+  .cbtn{ width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-size:18px; font-weight:600; background:var(--ink); color:var(--bg); cursor:pointer; border:none; transition:background .2s, transform .2s; }
+  .cbtn:hover:not(:disabled){ background:var(--accent); transform:scale(1.06); }
+  .cbtn:disabled{ opacity:.3; cursor:not-allowed; }
+
+  /* ===== Phone & tablet optimisation ===== */
+  @media(max-width:1023px){
+    .calc-sum{ position:static; }
+  }
+  @media(max-width:640px){
+    /* Feature rows: stack label over description instead of cramped 3 columns */
+    .feat{ grid-template-columns:20px 1fr; gap:.55rem; }
+    .feat > .chk{ grid-row:1 / span 2; }
+    .feat > b{ grid-column:2; }
+    .feat > span:last-child{ grid-column:2; margin-top:1px; }
+    /* Signature deliverable rows stack their description */
+    .sig-row{ grid-template-columns:16px 1fr; }
+    /* Transparency rows: chip drops below text neatly */
+    .tp-row{ padding:1.1rem 1.2rem; }
+    /* Menu overlay scrolls + nav stays compact */
+    #menu{ overflow-y:auto; justify-content:flex-start; padding-top:6rem; padding-bottom:3rem; }
+    .menu-link{ font-size:clamp(2.1rem,12vw,3.4rem); }
+    #logo img{ height:36px; }
+    #menu-btn{ padding:9px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div id="cursor"><span id="cur-dot"></span>
+  <svg viewBox="0 0 96 96"><defs><path id="cpath" d="M48,48 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"></path></defs>
+  <text><textPath href="#cpath" startOffset="0">BRANDING • ADVERTISING • MARKETING • </textPath></text></svg>
+</div>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-[58] px-5 md:px-9 py-4 flex items-center justify-between">
+  <a href="index.html" id="logo" class="flex items-center" data-c="link" aria-label="DigiBind Media">
+    <img id="logo-light" src="assets/logo.png" alt="DigiBind Media" class="h-10 md:h-12 w-auto">
+    <img id="logo-dark" src="assets/logo_dark.png" alt="DigiBind Media" class="h-10 md:h-12 w-auto">
+  </a>
+  <div class="flex items-center gap-3">
+    <button id="soul-btn" data-c="link" aria-label="Toggle soul mode" title="Soul mode">☯</button>
+    <button id="menu-btn" data-c="link" aria-label="Open menu"><span class="bars"><span></span><span></span></span>Menu</button>
+  </div>
+</nav>
+
+<div id="menu">
+  <button id="menu-close" class="absolute top-6 right-6 md:right-9 text-sm uppercase tracking-[0.2em]" data-c="link">Close ✕</button>
+  <nav class="flex flex-col gap-1">
+    <a href="index.html#services" class="menu-link" data-c="link">Services<span class="menu-idx">01</span></a>
+    <a href="index.html#industries" class="menu-link" data-c="link">Industry<span class="menu-idx">02</span></a>
+    <a href="pricing.html" class="menu-link" data-c="link">Pricing<span class="menu-idx">03</span></a>
+  </nav>
+  <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
+    <a href="mailto:contact@digibindmedia.com?subject=Discovery%20Call" class="inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-sm self-start" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
+    <div class="text-sm opacity-70">
+      <a href="mailto:contact@digibindmedia.com" class="block" data-c="link">contact@digibindmedia.com</a>
+      <a href="tel:+916353528739" class="block mt-1" data-c="link">+91 63535 28739</a>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="px-5 md:px-9 pt-32 md:pt-40 pb-10">
+    <div class="max-w-[1400px] mx-auto">
+      <p class="reveal kick mb-5">01 · Plans &amp; Pricing</p>
+      <h1 class="reveal display text-5xl md:text-8xl font-bold tracking-tight leading-[0.92]">Three plans.<br><span class="soul-serif italic" style="color:var(--accent)">All built to grow you.</span></h1>
+      <p class="reveal mt-6 max-w-2xl text-base md:text-lg" style="color:var(--soft)">Ad spend and creator costs are always passed through at exact cost — zero markup, full receipts. Our fee covers everything we do.</p>
+    </div>
+  </section>
+
+  <!-- PLAN CARDS -->
+  <section class="px-5 md:px-9 pb-8">
+    <div class="max-w-[1400px] mx-auto grid md:grid-cols-3 gap-5 items-start">
+
+      <!-- IGNITE -->
+      <article class="plan plan-light reveal" data-c="link">
+        <div class="plan-head">
+          <div class="mono text-[11px] tracking-widest opacity-60 mb-4">Plan 01</div>
+          <h2 class="display text-3xl font-bold tracking-tight">IGNITE</h2>
+          <p class="text-sm opacity-80 mt-2">Build the foundation before you scale</p>
+          <div class="display text-3xl md:text-4xl font-bold mt-6">₹18,000 – ₹40,000</div>
+          <div class="mono text-[10px] tracking-widest opacity-60 mt-2">/ MONTH · MANAGEMENT FEE</div>
+        </div>
+        <div class="px-6 pt-3 pb-6">
+          <div class="feat"><span class="chk">✓</span><b>12 Reels / month</b><span style="color:var(--soft)">Scripted hooks, edited, trend-optimised</span></div>
+          <div class="feat"><span class="chk">✓</span><b>6 Carousels / month</b><span style="color:var(--soft)">Education-first, save-optimised</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Max 2 Static Posts</b><span style="color:var(--soft)">Only for genuine brand moments</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Daily Stories</b><span style="color:var(--soft)">Warm audience nurture + CTAs</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Caption + Hashtag Strategy</b><span style="color:var(--soft)">Instagram SEO every post</span></div>
+          <div class="feat"><span class="chk">✓</span><b>28-Day Editorial Calendar</b><span style="color:var(--soft)">Hooks pre-approved</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Community Management</b><span style="color:var(--soft)">Comments + DMs within 24 hours</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Meta + Instagram Ads — Managed</b><span style="color:var(--soft)">Setup + optimisation included, free in every tier</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Monthly KPI Report</b><span style="color:var(--soft)">Real numbers, honest analysis</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Platforms</b><span style="color:var(--soft)">Instagram + Facebook</span></div>
+          <div class="plan-foot mt-5 p-4 rounded-2xl" style="background:var(--bg2)">
+            <div class="font-semibold text-sm">3-Month Minimum</div>
+            <div class="text-xs mb-3" style="color:var(--soft)">Ad spend at actuals · Zero markup</div>
+            <div class="text-sm"><b>Best for:</b> <span class="soul-serif italic" style="color:var(--soft)">New brands &amp; local service businesses building presence before ads.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- AMPLIFY (featured) -->
+      <article class="plan plan-accent featured reveal" data-c="link">
+        <div class="plan-head">
+          <div class="mono text-[11px] tracking-widest opacity-70 mb-4">Plan 02 · Most Popular</div>
+          <h2 class="display text-3xl font-bold tracking-tight">AMPLIFY</h2>
+          <p class="text-sm opacity-90 mt-2">Organic content + paid distribution — the full engine</p>
+          <div class="display text-3xl md:text-4xl font-bold mt-6">₹40,000 – ₹80,000</div>
+          <div class="mono text-[10px] tracking-widest opacity-70 mt-2">/ MONTH · ADS MANAGEMENT INCLUDED</div>
+        </div>
+        <div class="px-6 pt-3 pb-6">
+          <div class="feat"><span class="chk">✓</span><b>20 Reels / month</b><span style="color:var(--soft)">Scripted, trend-led, hook-tested</span></div>
+          <div class="feat"><span class="chk">✓</span><b>8 Carousels / month</b><span style="color:var(--soft)">Conversion-intent, save-optimised</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Max 3 Static Posts</b><span style="color:var(--soft)">Only when brand genuinely needs it</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Daily Stories</b><span style="color:var(--soft)">Warm audience nurture, link CTAs</span></div>
+          <div class="feat"><span class="chk">✓</span><b>4–6 Ad Creatives</b><span style="color:var(--soft)">Native-feel ads from best organic</span></div>
+          <div class="feat"><span class="chk">✓</span><b>YouTube Shorts</b><span style="color:var(--soft)">Reels repurposed for YT reach</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Meta + Instagram Ads — Fully Managed</b><span style="color:var(--soft)">Setup, A/B testing, daily optimisation</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Pixel + UTM + GA4 Setup</b><span style="color:var(--soft)">Full attribution — we track revenue</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Bi-weekly Strategy Calls + Reports</b><span style="color:var(--soft)">Performance review + next sprint</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Community Management</b><span style="color:var(--soft)">DMs + comments within 12 hours</span></div>
+          <div class="plan-foot mt-5 p-4 rounded-2xl" style="background:var(--bg2)">
+            <div class="font-semibold text-sm">3-Month Minimum</div>
+            <div class="text-xs mb-3" style="color:var(--soft)">Ad spend at actuals · Zero markup</div>
+            <div class="text-sm"><b>Best for:</b> <span class="soul-serif italic" style="color:var(--soft)">D2C, coaching, local chains — brands with product-market fit ready to scale.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- DOMINATE -->
+      <article class="plan plan-dark reveal" data-c="link">
+        <div class="plan-head">
+          <div class="mono text-[11px] tracking-widest opacity-70 mb-4">Plan 03</div>
+          <h2 class="display text-3xl font-bold tracking-tight">DOMINATE</h2>
+          <p class="text-sm opacity-90 mt-2">Full-stack growth engine across all platforms</p>
+          <div class="display text-3xl md:text-4xl font-bold mt-6">₹1,00,000+</div>
+          <div class="mono text-[10px] tracking-widest opacity-70 mt-2">/ MONTH · ALL MANAGEMENT INCLUDED</div>
+        </div>
+        <div class="px-6 pt-3 pb-6">
+          <div class="feat"><span class="chk">✓</span><b>32+ Reels / month</b><span style="color:var(--soft)">Scripted, shot-directed, multi-format</span></div>
+          <div class="feat"><span class="chk">✓</span><b>10 Carousels / month</b><span style="color:var(--soft)">Authority-building, share-optimised</span></div>
+          <div class="feat"><span class="chk">✓</span><b>UGC Creator Coordination</b><span style="color:var(--soft)">2–4 creators/month — briefed + managed</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Multi-Platform Publishing</b><span style="color:var(--soft)">IG + YT + LinkedIn + Pinterest</span></div>
+          <div class="feat"><span class="chk">✓</span><b>8–12 Ad Creatives</b><span style="color:var(--soft)">Full funnel: awareness → conversion</span></div>
+          <div class="feat"><span class="chk">✓</span><b>WhatsApp Broadcast Strategy</b><span style="color:var(--soft)">Conversion layer with social</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Meta + Google Ads — Full Funnel</b><span style="color:var(--soft)">Awareness, retargeting, catalogue ads</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Dedicated Senior Strategist</b><span style="color:var(--soft)">Single POC, weekly accountability</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Revenue Attribution Setup</b><span style="color:var(--soft)">UTMs + Pixel + GA4 — rupees not clicks</span></div>
+          <div class="feat"><span class="chk">✓</span><b>Founder Personal Brand</b><span style="color:var(--soft)">LinkedIn thought leadership</span></div>
+          <div class="plan-foot mt-5 p-4 rounded-2xl" style="background:var(--bg2)">
+            <div class="font-semibold text-sm">6-Month Minimum</div>
+            <div class="text-xs mb-3" style="color:var(--soft)">Ad spend + creator fees at actuals</div>
+            <div class="text-sm"><b>Best for:</b> <span class="soul-serif italic" style="color:var(--soft)">Funded startups, national D2C brands in aggressive growth phase.</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SIGNATURE PLAN 04 -->
+  <section class="px-5 md:px-9 py-10 md:py-16">
+    <div class="max-w-[1400px] mx-auto sig reveal p-7 md:p-12">
+      <div class="sig-grid"></div>
+      <div class="relative">
+        <span class="inline-flex items-center gap-2 mono text-[11px] tracking-widest px-4 py-2 rounded-full border" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.8)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent)"></span>PLAN 04 · SIGNATURE — ON-SITE PRODUCTION</span>
+        <h2 class="display text-4xl md:text-6xl font-bold tracking-tight mt-7 leading-[0.95]">We fly to you. We shoot.<br><span class="soul-serif italic" style="color:#c4b5fd">90 days of content in 1 week.</span></h2>
+        <p class="mt-5 max-w-2xl text-white/70 leading-relaxed">Our full production team travels to your location. In one intensive week we create 90 days of premium video content — completely on-brand, platform-optimised, ready to deploy. Nothing stock. Nothing templated. Everything unmistakably yours.</p>
+
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 mt-10">
+          <div>
+            <div class="mono text-[11px] tracking-widest text-white/50 pb-3 border-b border-white/15">1-WEEK SPRINT DELIVERABLES</div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>40 Complete Reels</b> <span class="text-white/60">Scripted, shot, edited, colour-graded, captioned</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>20 Carousels</b> <span class="text-white/60">Designed from shoot assets</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Brand Film (60–90 sec)</b> <span class="text-white/60">Premium hero video for website + ads</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Product / Service Visuals</b> <span class="text-white/60">Photography + video for all platforms</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Founder Content Series</b> <span class="text-white/60">Authority-building personal brand content</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Full Raw Footage Library</b> <span class="text-white/60">Unedited footage handed to client</span></div></div>
+          </div>
+          <div>
+            <div class="mono text-[11px] tracking-widest text-white/50 pb-3 border-b border-white/15">ONGOING MANAGEMENT</div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>12-Month Publishing Strategy</b> <span class="text-white/60">90 days of content deployed across the calendar</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>All Platform Management</b> <span class="text-white/60">IG + YT + LinkedIn + Facebook + Pinterest</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Full Ads Management</b> <span class="text-white/60">Meta + Google, full funnel, ongoing</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Influencer / Creator Strategy</b> <span class="text-white/60">Ongoing sourcing + management</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Dedicated Senior Team</b> <span class="text-white/60">Strategist + creative director + AM</span></div></div>
+            <div class="sig-row"><span style="color:#c4b5fd">→</span><div><b>Travel, Stay &amp; Production</b> <span class="text-white/60">All at actuals, zero markup</span></div></div>
+          </div>
+        </div>
+
+        <div class="mt-10 p-6 rounded-2xl border flex flex-col md:flex-row md:items-center justify-between gap-5" style="border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03)">
+          <div>
+            <div class="mono text-[11px] tracking-widest text-white/45 mb-1">PRICING</div>
+            <div class="display text-2xl md:text-3xl font-bold">Let's Talk Numbers <span class="text-white/50 text-base font-normal">— scoped per brand &amp; location</span></div>
+            <div class="text-white/55 text-sm mt-1">Get a tailored quote within 48 hours of a call.</div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="mono text-[11px] tracking-widest px-3 py-2 rounded-full border" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.7)">RECOMMENDED: 12 MONTHS</span>
+            <a href="mailto:contact@digibindmedia.com?subject=Signature%20Production%20Quote" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-black font-semibold text-sm" data-c="link">Get a Quote →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARENCY POLICY -->
+  <section class="px-5 md:px-9 py-12 md:py-20">
+    <div class="max-w-[1400px] mx-auto">
+      <p class="reveal kick mb-4">02 · Transparency Policy</p>
+      <h2 class="reveal display text-4xl md:text-6xl font-bold tracking-tight leading-[0.95]">What you pay us.<br><span class="soul-serif italic" style="color:var(--accent)">What goes elsewhere.</span></h2>
+      <p class="reveal mt-5 max-w-2xl text-base md:text-lg" style="color:var(--soft)">Our management fee covers everything we do. The costs below are never marked up. You pay actuals, with receipts.</p>
+
+      <div class="reveal mt-9 rounded-3xl border overflow-hidden" style="border-color:var(--line);background:var(--bg)">
+        <div class="tp-row"><div><div class="font-semibold">Ad Spend (Meta / Instagram / Google)</div><div class="text-sm mt-1" style="color:var(--soft)">You pay the platform directly. We manage everything within our retainer fee.</div></div><span class="tp-chip">Actuals · Zero Markup</span></div>
+        <div class="tp-row"><div><div class="font-semibold">Influencer / UGC Creator Fees</div><div class="text-sm mt-1" style="color:var(--soft)">Contracted rates negotiated transparently. You approve before we proceed.</div></div><span class="tp-chip">Actuals · Zero Markup</span></div>
+        <div class="tp-row"><div><div class="font-semibold">Travel &amp; Accommodation (SIGNATURE only)</div><div class="text-sm mt-1" style="color:var(--soft)">Flights, stay, local transport — booked with your approval.</div></div><span class="tp-chip">Actuals · Zero Markup</span></div>
+        <div class="tp-row"><div><div class="font-semibold">Production Equipment / Studio Rental</div><div class="text-sm mt-1" style="color:var(--soft)">Any third-party production costs are approved by you before being incurred.</div></div><span class="tp-chip">Actuals · Zero Markup</span></div>
+        <div class="tp-row"><div><div class="font-semibold">Tool Subscriptions (WhatsApp API, scheduling tools etc.)</div><div class="text-sm mt-1" style="color:var(--soft)">You own the subscription. We set it up and manage it.</div></div><span class="tp-chip alt">Your Name · Your Invoice</span></div>
+      </div>
+      <p class="reveal mt-6 text-sm" style="color:var(--soft)">You will never receive a bill from us without a line-by-line breakdown. Every rupee explained — before you ask.</p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="px-5 md:px-9 py-12 md:py-20 border-t" style="border-color:var(--line)">
+    <div class="max-w-[1400px] mx-auto">
+      <p class="reveal kick mb-4">03 · Estimate Your Scope</p>
+      <h2 class="reveal display text-4xl md:text-6xl font-bold tracking-tight leading-[0.95]">Build your<br><span class="soul-serif italic" style="color:var(--accent)">custom estimate.</span></h2>
+      <p class="reveal mt-5 max-w-2xl text-base md:text-lg" style="color:var(--soft)">Select your plan first — that sets the minimum. Then add complexity, extra reels, platforms, and services on top. Every number is transparent and explained below.</p>
+
+      <div class="reveal mt-10 grid lg:grid-cols-[1.6fr_1fr] gap-5">
+        <!-- FORM -->
+        <div class="rounded-3xl border p-6 md:p-9 space-y-7" style="border-color:var(--line);background:var(--bg)">
+          <div>
+            <div class="kick mb-1">Step 1 — Choose your plan (tier)</div>
+            <p class="text-sm mb-3" style="color:var(--soft)">This sets your minimum. Everything else adds on top.</p>
+            <select id="calc-plan" class="calc-in">
+              <option value="18000" data-name="IGNITE" data-reels="12">IGNITE — ₹18,000/mo base (12 reels · IG + FB · Meta Ads managed)</option>
+              <option value="40000" data-name="AMPLIFY" data-reels="20">AMPLIFY — ₹40,000/mo base (20 reels · IG+FB+YT · Meta Ads included)</option>
+              <option value="100000" data-name="DOMINATE" data-reels="32">DOMINATE — ₹1,00,000/mo base (32 reels · all platforms · full funnel)</option>
+            </select>
+          </div>
+          <div>
+            <div class="kick mb-1">Step 2 — Stage / complexity</div>
+            <p class="text-sm mb-3" style="color:var(--soft)">Early-stage brands need the most groundwork — building a foundation from zero takes more effort than scaling proven systems.</p>
+            <select id="calc-stage" class="calc-in">
+              <option value="12000" data-label="Early brand / Pre-revenue (under ₹1L/month) — foundation from scratch">Early brand / Pre-revenue (under ₹1L/month) — foundation from scratch · +₹12,000</option>
+              <option value="7000" data-label="Growing (₹1L–₹10L/month) — refining what works">Growing (₹1L–₹10L/month) — refining what works · +₹7,000</option>
+              <option value="3000" data-label="Established (₹10L+/month) — scaling proven systems">Established (₹10L+/month) — scaling proven systems · +₹3,000</option>
+            </select>
+          </div>
+          <div>
+            <div class="kick mb-1">Step 3 — Primary goal</div>
+            <p class="text-sm mb-3" style="color:var(--soft)">Revenue-focused goals require deeper strategy and attribution setup.</p>
+            <select id="calc-goal" class="calc-in">
+              <option value="0" data-label="Build Brand Awareness &amp; Audience">Build Brand Awareness &amp; Audience — +₹0</option>
+              <option value="8000" data-label="Lead Generation">Lead Generation — +₹8,000</option>
+              <option value="15000" data-label="Direct Sales / Revenue">Direct Sales / Revenue — +₹15,000</option>
+            </select>
+          </div>
+          <div>
+            <div class="kick mb-1">Step 4 — Extra reels (above plan base)</div>
+            <p class="text-sm mb-3" style="color:var(--soft)" id="calc-reels-note">Your IGNITE plan includes 12 reels. Add more below if needed.</p>
+            <div class="flex flex-wrap items-center gap-4">
+              <div class="flex items-center gap-3 rounded-full border px-2 py-1.5" style="border-color:var(--line)">
+                <button type="button" id="reel-minus" class="cbtn" data-c="link" aria-label="Remove reel">−</button>
+                <span id="reel-count" class="display text-xl font-bold w-9 text-center">0</span>
+                <button type="button" id="reel-plus" class="cbtn" data-c="link" aria-label="Add reel">+</button>
+              </div>
+              <div class="text-sm" id="reel-rate" style="color:var(--soft)">No extra reels — using plan base</div>
+            </div>
+            <p class="text-xs mt-2" style="color:var(--soft)">Volume pricing — the more you add, the cheaper each gets: ₹1,200/reel · ₹1,000 from the 6th · ₹800 from the 10th.</p>
+          </div>
+          <div>
+            <div class="kick mb-1">Step 5 — Additional platforms</div>
+            <p class="text-sm mb-3" style="color:var(--soft)">Meta (IG + FB) is included in all plans.</p>
+            <select id="calc-platform" class="calc-in">
+              <option value="0">No additional platform — Meta (IG+FB) base only</option>
+              <option value="8000">+ YouTube — +₹8,000</option>
+              <option value="8000">+ LinkedIn — +₹8,000</option>
+              <option value="5000">+ Pinterest — +₹5,000</option>
+              <option value="18000">+ All platforms (YT + LinkedIn + Pinterest) — +₹18,000</option>
+            </select>
+          </div>
+          <div>
+            <div class="kick mb-3">Step 6 — Add-on services (optional)</div>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <label class="addon included on" data-price="0" data-id="meta">
+                <div class="flex items-start gap-3"><span class="addon-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div><div class="font-semibold text-sm">Meta Ads Management</div><div class="text-xs mt-1" style="color:var(--soft)">Campaign setup, A/B testing, optimisation</div><div class="text-xs mt-1 addon-price font-semibold" style="color:var(--accent)">Included in all plans</div></div></div>
+              </label>
+              <label class="addon" data-price="18000" data-id="ecom">
+                <div class="flex items-start gap-3"><span class="addon-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div><div class="font-semibold text-sm">Ecom Listing Mgmt</div><div class="text-xs mt-1" style="color:var(--soft)">10 SKUs, brand page, product shots, SEO</div><div class="text-xs mt-1" style="color:var(--accent)">+₹18,000/mo · extra SKU ₹499</div></div></div>
+              </label>
+              <label class="addon" data-price="10000" data-id="wa">
+                <div class="flex items-start gap-3"><span class="addon-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div><div class="font-semibold text-sm">WhatsApp Marketing</div><div class="text-xs mt-1" style="color:var(--soft)">Broadcast + automation + conversion flows</div><div class="text-xs mt-1" style="color:var(--accent)">+₹10,000/mo</div></div></div>
+              </label>
+              <label class="addon" data-price="12000" data-id="ugc">
+                <div class="flex items-start gap-3"><span class="addon-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div><div class="font-semibold text-sm">UGC Creator Coordination</div><div class="text-xs mt-1" style="color:var(--soft)">2–4 creators briefed + managed</div><div class="text-xs mt-1" style="color:var(--accent)">+₹12,000/mo · creator fees at actuals</div></div></div>
+              </label>
+              <label class="addon" data-price="12000" data-id="founder">
+                <div class="flex items-start gap-3"><span class="addon-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div><div class="font-semibold text-sm">Founder Personal Brand</div><div class="text-xs mt-1" style="color:var(--soft)">LinkedIn thought leadership content</div><div class="text-xs mt-1" style="color:var(--accent)">+₹12,000/mo</div></div></div>
+              </label>
+              <label class="addon" data-price="9000" data-id="seo">
+                <div class="flex items-start gap-3"><span class="addon-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div><div class="font-semibold text-sm">Blog &amp; SEO Content</div><div class="text-xs mt-1" style="color:var(--soft)">4 articles/mo, on-page + AEO</div><div class="text-xs mt-1" style="color:var(--accent)">+₹9,000/mo</div></div></div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div>
+          <div class="calc-sum">
+            <div class="mono text-[11px] tracking-widest text-white/45 mb-4">YOUR ESTIMATED SCOPE</div>
+            <div class="sum-row"><span class="text-white/70" id="row-base-label">Plan Base (IGNITE)</span><span class="font-semibold" id="sum-base">₹18,000</span></div>
+            <div class="sum-row"><span class="text-white/70">Stage Complexity</span><span class="font-semibold" id="sum-stage">₹0</span></div>
+            <div class="sum-row"><span class="text-white/70">Goal Complexity</span><span class="font-semibold" id="sum-goal">₹0</span></div>
+            <div class="sum-row"><span class="text-white/70">Extra Reels</span><span class="font-semibold" id="sum-reels">₹0</span></div>
+            <div class="sum-row"><span class="text-white/70">Platform Add-ons</span><span class="font-semibold" id="sum-platform">₹0</span></div>
+            <div class="sum-row"><span class="text-white/70">Add-On Services</span><span class="font-semibold" id="sum-addons">₹0</span></div>
+            <div class="mt-4"><span class="mono text-[11px] tracking-widest px-3 py-1.5 rounded-full" style="background:rgba(124,58,237,.25);color:#c4b5fd" id="sum-tier">IGNITE TIER</span></div>
+            <div class="mt-5 rounded-2xl p-5 text-center" style="background:linear-gradient(150deg,#7c3aed,#3b2a8c)">
+              <div class="mono text-[10px] tracking-widest text-white/70 mb-1">ESTIMATED MONTHLY FEE</div>
+              <div class="display text-4xl md:text-5xl font-bold" id="sum-total">₹18,000</div>
+              <div class="text-[11px] text-white/70 mt-1">+ GST · excl. creator costs &amp; production</div>
+            </div>
+            <div class="mt-4 p-4 rounded-2xl" style="background:rgba(255,255,255,.05)">
+              <div class="text-xs font-semibold mb-1">ALWAYS AT ACTUALS — ZERO MARKUP</div>
+              <div class="text-xs text-white/60">Ad spend, creator fees, and production are billed separately at exact cost. Full receipts always provided.</div>
+            </div>
+            <a href="mailto:contact@digibindmedia.com?subject=Discovery%20Call" class="mt-4 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-semibold text-sm" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
+            <p class="text-[11px] text-white/40 mt-3 text-center">Indicative only. Confirmed after your free 30-min discovery call.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-5 md:px-9 py-20 md:py-28 text-center">
+    <div class="max-w-[1000px] mx-auto">
+      <h2 class="reveal display text-4xl md:text-[6vw] font-bold leading-[0.95] md:leading-[0.92] tracking-tight">Let's scope your <span class="pill">growth</span> together.</h2>
+      <a href="mailto:contact@digibindmedia.com?subject=Discovery%20Call" class="reveal group inline-flex items-center gap-3 mt-10 px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold text-base md:text-lg" style="background:var(--ink);color:var(--bg)" data-c="link">
+        Book a free discovery call <span class="w-7 h-7 rounded-full grid place-items-center transition-transform duration-500 group-hover:rotate-45" style="background:var(--lime);color:#141318">↗</span>
+      </a>
+      <p class="reveal mt-8 text-sm max-w-md mx-auto" style="color:var(--soft)">We onboard a limited number of clients each month to protect the quality of the work.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-5 md:px-9 py-14 border-t" style="border-color:var(--line)">
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-7">
+      <p class="max-w-md text-base md:text-lg leading-relaxed">
+        <span class="display font-bold">DigiBind Media.</span> A creative agency binding brand, story and data into branding, advertising and marketing that earns attention — and converts it.
+      </p>
+      <div class="text-sm md:text-right" style="color:var(--soft)">
+        <a href="mailto:contact@digibindmedia.com" class="block text-base md:text-lg display" style="color:var(--ink)" data-c="link">contact@digibindmedia.com</a>
+        <a href="tel:+916353528739" class="block text-base md:text-lg display mt-1" style="color:var(--ink)" data-c="link">+91 63535 28739</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var lenis=null;
+  try{ if(window.Lenis){ lenis=new Lenis({duration:1.1, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true, smoothTouch:false}); requestAnimationFrame(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }); } }catch(e){}
+  document.documentElement.classList.add('ready');
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0.08, rootMargin:'0px 0px -5% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  // cursor
+  var cursor=document.getElementById('cursor');
+  if(window.matchMedia('(min-width:1024px)').matches){
+    var mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+    addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+    (function loop(){ cx+=(mx-cx)*0.18; cy+=(my-cy)*0.18; cursor.style.left=cx+'px'; cursor.style.top=cy+'px'; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover',function(e){ var t=e.target.closest('[data-c]'); cursor.classList.remove('link'); if(t){ cursor.classList.add(t.getAttribute('data-c')); } });
+  }
+
+  // menu
+  var menu=document.getElementById('menu');
+  function closeMenu(){ menu.classList.remove('open'); if(lenis)lenis.start(); }
+  document.getElementById('menu-btn').addEventListener('click',function(){ menu.classList.add('open'); if(lenis)lenis.stop(); });
+  document.getElementById('menu-close').addEventListener('click',closeMenu);
+  document.querySelectorAll('.menu-link').forEach(function(l){ l.addEventListener('click',closeMenu); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+
+  // soul
+  document.getElementById('soul-btn').addEventListener('click',function(){
+    var on=document.body.classList.toggle('soul');
+    var tc=document.querySelector('meta[name=theme-color]'); if(tc)tc.setAttribute('content',on?'#070611':'#f3f2ec');
+  });
+
+  // ===== CALCULATOR =====
+  var plan=document.getElementById('calc-plan'), stage=document.getElementById('calc-stage'),
+      goal=document.getElementById('calc-goal'), platform=document.getElementById('calc-platform');
+  var addons=[].slice.call(document.querySelectorAll('.addon'));
+  function inr(n){ return '₹'+Number(n).toLocaleString('en-IN'); }
+
+  // Extra-reels counter with volume pricing (cheaper per reel the more you add)
+  var reelCount=0,
+      reelMinus=document.getElementById('reel-minus'), reelPlus=document.getElementById('reel-plus'),
+      reelCountEl=document.getElementById('reel-count'), reelRateEl=document.getElementById('reel-rate');
+  function reelRate(c){ return c<=5 ? 1200 : (c<10 ? 1000 : 800); }
+  function reelCost(){ return reelCount*reelRate(reelCount); }
+  function renderReels(){
+    reelCountEl.textContent=reelCount;
+    reelMinus.disabled = reelCount<=0;
+    if(reelCount===0){ reelRateEl.textContent='No extra reels — using plan base'; reelRateEl.style.color='var(--soft)'; }
+    else { reelRateEl.innerHTML='+'+reelCount+' reels · ₹'+reelRate(reelCount).toLocaleString('en-IN')+'/reel = <b style="color:var(--ink)">'+inr(reelCost())+'</b>'; }
+  }
+  reelPlus.addEventListener('click',function(){ if(reelCount<40){ reelCount++; renderReels(); calc(); } });
+  reelMinus.addEventListener('click',function(){ if(reelCount>0){ reelCount--; renderReels(); calc(); } });
+
+  // Add-on toggles (items with class "included" are always-free, e.g. Meta Ads)
+  addons.forEach(function(a){
+    a.addEventListener('click',function(){ if(a.classList.contains('included')) return; a.classList.toggle('on'); calc(); });
+  });
+
+  // Complexity adjustments scale up with the chosen tier
+  var stagePrices={ IGNITE:[12000,7000,3000], AMPLIFY:[18000,11000,5000], DOMINATE:[27000,16000,7500] };
+  var goalPrices ={ IGNITE:[0,8000,15000], AMPLIFY:[0,12000,22000], DOMINATE:[0,18000,33000] };
+  function updateTierPricing(name){
+    var sIdx=stage.selectedIndex, gIdx=goal.selectedIndex;
+    [].forEach.call(stage.options,function(o,i){ var pr=stagePrices[name][i]; o.value=pr; o.textContent=o.getAttribute('data-label')+' · +'+inr(pr); });
+    [].forEach.call(goal.options,function(o,i){ var pr=goalPrices[name][i]; o.value=pr; o.textContent=o.getAttribute('data-label')+(pr===0?' — +₹0':' · +'+inr(pr)); });
+    stage.selectedIndex=sIdx; goal.selectedIndex=gIdx;
+  }
+  function calc(){
+    var p=plan.options[plan.selectedIndex];
+    var base=+plan.value, name=p.getAttribute('data-name'), incReels=p.getAttribute('data-reels');
+    updateTierPricing(name);
+    var stageV=+stage.value, goalV=+goal.value, reelsV=reelCost(), platV=+platform.value;
+
+    var addonSum=0;
+    addons.forEach(function(a){ if(a.classList.contains('included')) return; if(a.classList.contains('on')) addonSum+=+a.getAttribute('data-price'); });
+
+    var total=base+stageV+goalV+reelsV+platV+addonSum;
+
+    document.getElementById('row-base-label').textContent='Plan Base ('+name+')';
+    document.getElementById('sum-base').textContent=inr(base);
+    document.getElementById('sum-stage').textContent=inr(stageV);
+    document.getElementById('sum-goal').textContent=inr(goalV);
+    document.getElementById('sum-reels').textContent=inr(reelsV);
+    document.getElementById('sum-platform').textContent=inr(platV);
+    document.getElementById('sum-addons').textContent=inr(addonSum);
+    document.getElementById('sum-tier').textContent=name+' TIER';
+    document.getElementById('sum-total').textContent=inr(total);
+    document.getElementById('calc-reels-note').textContent='Your '+name+' plan includes '+incReels+' reels. Add more below if needed.';
+  }
+  [plan,stage,goal,platform].forEach(function(el){ el.addEventListener('change',calc); });
+  renderReels(); calc();
+})();
+</script>
+</body>
+</html>
