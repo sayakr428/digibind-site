@@ -51,8 +51,8 @@
   .lenis.lenis-stopped{overflow:hidden;}
   *{ -ms-overflow-style:none; scrollbar-width:none; }
   ::-webkit-scrollbar{ display:none; }
-  html{ overflow-x:hidden; }
-  body{ background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; overflow-x:hidden; max-width:100vw;
+  html{ overflow-x:clip; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; overflow-x:clip; max-width:100vw;
     transition:background .7s cubic-bezier(.65,0,.35,1), color .7s cubic-bezier(.65,0,.35,1); }
   @media(min-width:1024px){ body{cursor:none;} }
   h1,h2,h3,.display{ font-family:'Space Grotesk',sans-serif; }
@@ -207,11 +207,11 @@
     .flow-inner{ min-height:auto; padding:2.6rem 6vw; gap:1.3rem; transform:none !important; }
     .bgnum{ font-size:17vh; top:.6rem; right:4vw; opacity:.07; }
     .ind-strip{ height:30vh; }
-    /* Services stacked cards: ease the sticky offset so nothing hides under the nav */
-    .stack-card{ position:relative !important; top:auto !important; }
   }
   @media(max-width:640px){
     .ind-strip{ height:34vh; }
+    /* On small phones, stack plainly instead of sticky (avoids nav overlap) */
+    .stack-card{ position:relative !important; top:auto !important; }
     .bgnum{ font-size:14vh; }
     #narrative .n-chapter{ padding-top:4.5rem; }
     #narrative .ind-strip{ height:30vh; }
