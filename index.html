@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#f3f2ec" />
 
-<title>DigiBind Media — Branding, Advertising &amp; Marketing Agency</title>
-<meta name="description" content="DigiBind Media is a creative branding, advertising and marketing agency for B2B and B2C — health, real estate, fintech, e-commerce, hospitality and tech. We craft reels, posters, identities and data-driven campaigns. Book a free discovery call." />
-<meta name="keywords" content="branding agency, advertising studio, marketing agency, social media reels, poster design, performance marketing, brand identity, B2B marketing, DigiBind Media" />
-<meta name="author" content="DigiBind Media" />
-<link rel="canonical" href="https://digibindmedia.com/" />
+<title>WebGrow360 — Branding, Advertising &amp; Marketing Agency</title>
+<meta name="description" content="WebGrow360 is a creative branding, advertising and marketing agency for B2B and B2C — health, real estate, fintech, e-commerce, hospitality and tech. We craft reels, posters, identities and data-driven campaigns. Book a free discovery call." />
+<meta name="keywords" content="branding agency, advertising studio, marketing agency, social media reels, poster design, performance marketing, brand identity, B2B marketing, WebGrow360" />
+<meta name="author" content="WebGrow360" />
+<link rel="canonical" href="https://webgrow360.online/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="DigiBind Media — Branding · Advertising · Marketing" />
+<meta property="og:title" content="WebGrow360 — Branding · Advertising · Marketing" />
 <meta property="og:description" content="A creative agency crafting reels, posters, identities and data-driven campaigns for B2B and B2C. Book a free discovery call." />
-<meta property="og:url" content="https://digibindmedia.com/" />
-<meta property="og:image" content="https://digibindmedia.com/og-image.jpg" />
+<meta property="og:url" content="https://webgrow360.online/" />
+<meta property="og:image" content="https://webgrow360.online/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 
+<link rel="icon" type="image/webp" href="assets/webgrow360-mark.webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Instrument+Sans:wght@600&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: { fontFamily: {
@@ -29,10 +30,10 @@
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"DigiBind Media","description":"Creative branding, advertising and marketing agency for B2B and B2C, specialising in reels, posters, brand identity and data-driven campaigns.","url":"https://digibindmedia.com/","email":"contact@digibindmedia.com","telephone":"+91-63535-28739","slogan":"Branding · Advertising · Marketing","priceRange":"$$$","areaServed":"Worldwide","knowsAbout":["Branding","Advertising","Social Media Marketing","Reels","Poster Design","Performance Marketing","Brand Identity","B2B Marketing"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WebGrow360","description":"Creative branding, advertising and marketing agency for B2B and B2C, specialising in reels, posters, brand identity and data-driven campaigns.","url":"https://webgrow360.online/","email":"Connect@team.webgrow360.online","telephone":"+91-89743-32863","slogan":"Branding · Advertising · Marketing","priceRange":"$$$","areaServed":"Worldwide","knowsAbout":["Branding","Advertising","Social Media Marketing","Reels","Poster Design","Performance Marketing","Brand Identity","B2B Marketing"]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does DigiBind Media do?","acceptedAnswer":{"@type":"Answer","text":"DigiBind Media is a creative agency handling branding, advertising and marketing end to end for both B2B and B2C: identities, reels, posters, campaign creative and data-driven performance marketing."}},{"@type":"Question","name":"How do I start a project?","acceptedAnswer":{"@type":"Answer","text":"Book a free discovery call. We audit your brand, define a strategy and only onboard a limited number of clients each month."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does WebGrow360 do?","acceptedAnswer":{"@type":"Answer","text":"WebGrow360 is a creative agency handling branding, advertising and marketing end to end for both B2B and B2C: identities, reels, posters, campaign creative and data-driven performance marketing."}},{"@type":"Question","name":"How do I start a project?","acceptedAnswer":{"@type":"Answer","text":"Book a free discovery call. We audit your brand, define a strategy and only onboard a limited number of clients each month."}}]}
 </script>
 
 <style>
@@ -147,8 +148,37 @@
     border:1px solid var(--line); background:transparent; color:var(--ink); font-size:18px; line-height:1; transition:transform .5s cubic-bezier(.16,1,.3,1), background .4s, color .4s; }
   #soul-btn:hover{ transform:rotate(180deg); }
   body.soul #soul-btn{ background:var(--lime); color:#141318; border-color:transparent; }
-  #logo-dark{ display:none; }
-  body.soul #logo-light{ display:none; } body.soul #logo-dark{ display:block; }
+
+  /* ===== Header — mirrors realestate.webgrow360.online ===== */
+  #site-head{ position:fixed; top:0; left:0; right:0; z-index:58; padding:14px clamp(12px,2.2vw,32px) 0; transition:transform .46s cubic-bezier(.32,.72,0,1); }
+  #site-head.hide{ transform:translateY(-120%); }
+  /* glass pill, tinted with --ink so it always contrasts the page (dark glass on light, light glass in soul mode) */
+  #site-head .bar{ max-width:96rem; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; border-radius:999px; padding:8px 8px 8px 22px;
+    color:var(--bg); background-color:color-mix(in oklab, var(--ink) 80%, transparent);
+    background-image:linear-gradient(180deg, color-mix(in oklab, var(--bg) 12%, transparent), transparent 55%);
+    backdrop-filter:blur(20px) saturate(170%); -webkit-backdrop-filter:blur(20px) saturate(170%);
+    border:1px solid color-mix(in oklab, var(--bg) 18%, transparent);
+    box-shadow:inset 0 1px 0 color-mix(in oklab, var(--bg) 22%, transparent), 0 14px 36px -14px rgba(0,0,0,.35);
+    transition:background-color .5s cubic-bezier(.32,.72,0,1), box-shadow .5s cubic-bezier(.32,.72,0,1); }
+  #site-head.scrolled .bar{ background-color:color-mix(in oklab, var(--ink) 86%, transparent); }
+  .wg-logo{ display:inline-flex; align-items:center; gap:.65rem; flex:none; font-size:16px; color:inherit; transition:opacity .3s; }
+  .wg-logo:hover{ opacity:.7; }
+  .wg-logo img{ width:2.05em; height:2.05em; object-fit:contain; flex:none; }
+  .wg-word{ display:flex; flex-direction:column; line-height:1; }
+  .wg-word b{ font-family:'Instrument Sans','Inter',sans-serif; font-weight:600; letter-spacing:.11em; }
+  .wg-word small{ margin-top:.34em; font-family:'Azeret Mono',monospace; font-size:.58em; letter-spacing:.36em; opacity:.7; }
+  .nav-links{ display:none; align-items:center; gap:4px; }
+  .nav-link{ position:relative; padding:10px 16px; border-radius:999px; font-size:15px; color:color-mix(in oklab, var(--bg) 68%, transparent); transition:color .3s, background .3s; }
+  .nav-link:hover,.nav-link.active{ color:var(--bg); }
+  .nav-link:hover{ background:color-mix(in oklab, var(--bg) 10%, transparent); }
+  .nav-link::after{ content:''; position:absolute; left:50%; top:50%; width:4px; height:4px; border-radius:50%; background:var(--accent); transform:translate(-50%,.85rem); opacity:0; transition:opacity .3s; }
+  .nav-link.active::after{ opacity:1; }
+  .nav-cta{ display:none; padding:10px 20px; border-radius:999px; font-size:15px; font-weight:500; background:var(--accent); color:#fff; white-space:nowrap; transition:background .5s; }
+  @media(min-width:1024px){ .nav-links{ display:flex; } .nav-cta{ display:inline-block; } }
+  #site-head #menu-btn{ background:var(--bg); color:var(--ink); }
+  #site-head #soul-btn{ color:var(--bg); border-color:color-mix(in oklab, var(--bg) 25%, transparent); }
+  body.soul #site-head #soul-btn{ color:#141318; }
+  body.soul .nav-cta{ color:#141318; }
 
   #menu-btn{ display:flex; align-items:center; gap:9px; font-size:13px; font-weight:600; padding:10px 18px; border-radius:999px; background:var(--ink); color:var(--bg); }
   #menu-btn .bars{ width:16px; height:10px; position:relative; }
@@ -170,7 +200,6 @@
   #narrative{ position:fixed; inset:0; z-index:40; display:none; background:#000; color:#fff; font-family:'Montserrat','Inter',sans-serif; }
   body.soul #narrative{ display:block; }
   body.soul #cursor{ display:none; }
-  body.soul #menu-btn{ display:none; }
   body.soul #peek{ display:none; }
   #narrative .n-scroll{ width:100%; height:100vh; overflow-y:scroll; overflow-x:hidden; scroll-snap-type:y mandatory; scroll-behavior:smooth; }
   #narrative .n-scroll::-webkit-scrollbar{ display:none; }
@@ -217,7 +246,7 @@
     #narrative .ind-strip{ height:30vh; }
     #menu{ overflow-y:auto; justify-content:flex-start; padding-top:6rem; padding-bottom:3rem; }
     .menu-link{ font-size:clamp(2.1rem,12vw,3.4rem); }
-    #logo img{ height:36px; }
+    .wg-logo{ font-size:14px; }
     #menu-btn{ padding:9px 14px; }
   }
 </style>
@@ -235,30 +264,42 @@
 <div id="modal"><button id="modal-x" class="absolute top-6 right-6 text-white uppercase tracking-[0.2em] text-xs z-10" data-c="link">Close ✕</button><div class="box" id="modal-box"></div></div>
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 w-full z-[58] px-5 md:px-9 py-4 flex items-center justify-between">
-  <a href="#top" id="logo" class="flex items-center" data-c="link" aria-label="DigiBind Media">
-    <img id="logo-light" src="assets/logo.png" alt="DigiBind Media — Branding, Advertising, Marketing" class="h-10 md:h-12 w-auto">
-    <img id="logo-dark" src="assets/logo_dark.png" alt="DigiBind Media" class="h-10 md:h-12 w-auto">
-  </a>
-  <div class="flex items-center gap-3">
-    <button id="soul-btn" data-c="link" aria-label="Toggle soul mode" title="Soul mode">☯</button>
-    <button id="menu-btn" data-c="link" aria-label="Open menu"><span class="bars"><span></span><span></span></span>Menu</button>
+<header id="site-head">
+  <div class="bar">
+    <a href="#top" id="logo" class="wg-logo" data-c="link" aria-label="WEBGROW360 home">
+      <img src="assets/webgrow360-mark.webp" alt="" aria-hidden="true">
+      <span class="wg-word"><b>WEBGROW360</b><small>ONLINE</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#industries" class="nav-link" data-c="link">Our Work</a>
+      <a href="#services" class="nav-link" data-c="link">Services</a>
+      <a href="#solutions" class="nav-link" data-c="link">Solutions</a>
+      <a href="about.html" class="nav-link" data-c="link">About Us</a>
+      <a href="#connect" class="nav-link" data-c="link">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="#connect" class="nav-cta" data-c="link">Start a project</a>
+      <button id="soul-btn" data-c="link" aria-label="Toggle soul mode" title="Soul mode">☯</button>
+      <button id="menu-btn" data-c="link" aria-label="Open menu"><span class="bars"><span></span><span></span></span>Menu</button>
+    </div>
   </div>
-</nav>
+</header>
 
 <!-- MENU -->
 <div id="menu">
   <button id="menu-close" class="absolute top-6 right-6 md:right-9 text-sm uppercase tracking-[0.2em]" data-c="link">Close ✕</button>
   <nav class="flex flex-col gap-1">
-    <a href="#services" class="menu-link" data-c="link">Services<span class="menu-idx">01</span></a>
-    <a href="#industries" class="menu-link" data-c="link">Industry<span class="menu-idx">02</span></a>
-    <a href="pricing.html" class="menu-link" data-c="link">Pricing<span class="menu-idx">03</span></a>
+    <a href="#industries" class="menu-link" data-c="link">Our Work<span class="menu-idx">01</span></a>
+    <a href="#services" class="menu-link" data-c="link">Services<span class="menu-idx">02</span></a>
+    <a href="#solutions" class="menu-link" data-c="link">Solutions<span class="menu-idx">03</span></a>
+    <a href="about.html" class="menu-link" data-c="link">About Us<span class="menu-idx">04</span></a>
+    <a href="#connect" class="menu-link" data-c="link">Contact<span class="menu-idx">05</span></a>
   </nav>
   <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
     <a href="#connect" class="inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-sm self-start" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
     <div class="text-sm opacity-70">
-      <a href="mailto:contact@digibindmedia.com" class="block" data-c="link">contact@digibindmedia.com</a>
-      <a href="tel:+916353528739" class="block mt-1" data-c="link">+91 63535 28739</a>
+      <a href="mailto:Connect@team.webgrow360.online" class="block" data-c="link">Connect@team.webgrow360.online</a>
+      <a href="tel:+918974332863" class="block mt-1" data-c="link">+91 89743 32863</a>
     </div>
   </div>
 </div>
@@ -580,7 +621,7 @@
     <div class="max-w-[1400px] mx-auto">
       <p class="text-xs uppercase tracking-[0.28em] mb-3" style="color:var(--soft)">[ Testimonials ]</p>
       <blockquote class="reveal max-w-5xl mb-12">
-        <p class="soul-serif font-medium text-2xl md:text-5xl leading-[1.18]">"DigiBind didn't just refresh our look — they gave us a <span class="italic" style="color:var(--accent)">pulse.</span> Our content went from a few hundred views to consistently over a million, and the pipeline followed."</p>
+        <p class="soul-serif font-medium text-2xl md:text-5xl leading-[1.18]">"WebGrow360 didn't just refresh our look — they gave us a <span class="italic" style="color:var(--accent)">pulse.</span> Our content went from a few hundred views to consistently over a million, and the pipeline followed."</p>
         <footer class="mt-5 text-sm" style="color:var(--soft)">— Maya R., Head of Growth, NOVApay (Fintech)</footer>
       </blockquote>
       <div class="grid md:grid-cols-3 gap-4">
@@ -672,7 +713,7 @@
   <section id="connect" class="px-5 md:px-9 py-20 md:py-28 text-center">
     <div class="max-w-[1000px] mx-auto">
       <h2 class="reveal display text-4xl md:text-[6vw] font-bold leading-[0.95] md:leading-[0.92] tracking-tight">Ready to make your name <span class="pill">impossible</span> to ignore?</h2>
-      <a href="mailto:contact@digibindmedia.com?subject=Discovery%20Call" class="reveal group inline-flex items-center gap-3 mt-10 px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold text-base md:text-lg" style="background:var(--ink);color:var(--bg)" data-c="link">
+      <a href="mailto:Connect@team.webgrow360.online?subject=Discovery%20Call" class="reveal group inline-flex items-center gap-3 mt-10 px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold text-base md:text-lg" style="background:var(--ink);color:var(--bg)" data-c="link">
         Book a free discovery call <span class="w-7 h-7 rounded-full grid place-items-center transition-transform duration-500 group-hover:rotate-45" style="background:var(--lime);color:#141318">↗</span>
       </a>
       <p class="reveal mt-8 text-sm max-w-md mx-auto" style="color:var(--soft)">We onboard a limited number of clients each month to protect the quality of the work.</p>
@@ -683,11 +724,11 @@
   <footer class="px-5 md:px-9 py-14 border-t soul-transparent" style="border-color:var(--line)">
     <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-7">
       <p class="max-w-md text-base md:text-lg leading-relaxed">
-        <span class="display font-bold">DigiBind Media.</span> A creative agency binding brand, story and data into branding, advertising and marketing that earns attention — and converts it.
+        <span class="display font-bold">WebGrow360.</span> A creative agency binding brand, story and data into branding, advertising and marketing that earns attention — and converts it.
       </p>
       <div class="text-sm md:text-right" style="color:var(--soft)">
-        <a href="mailto:contact@digibindmedia.com" class="block text-base md:text-lg display" style="color:var(--ink)" data-c="link">contact@digibindmedia.com</a>
-        <a href="tel:+916353528739" class="block text-base md:text-lg display mt-1" style="color:var(--ink)" data-c="link">+91 63535 28739</a>
+        <a href="mailto:Connect@team.webgrow360.online" class="block text-base md:text-lg display" style="color:var(--ink)" data-c="link">Connect@team.webgrow360.online</a>
+        <a href="tel:+918974332863" class="block text-base md:text-lg display mt-1" style="color:var(--ink)" data-c="link">+91 89743 32863</a>
       </div>
     </div>
   </footer>
@@ -711,7 +752,7 @@
         <div class="max-w-4xl mx-auto">
           <p class="n-title text-[10px] uppercase tracking-[0.3em] text-white/50 mb-7">Prologue // 00</p>
           <h1 class="n-title n-serif text-6xl md:text-8xl lg:text-[8.5vw] leading-none mb-7">Every brand has a <span class="italic text-white/70">soul.</span></h1>
-          <p class="n-title text-sm md:text-base text-white/70 max-w-xl mx-auto font-light leading-relaxed">We don't ship generic campaigns. We craft immersive worlds that capture the essence of each industry we touch. Scroll to experience the DigiBind narrative.</p>
+          <p class="n-title text-sm md:text-base text-white/70 max-w-xl mx-auto font-light leading-relaxed">We don't ship generic campaigns. We craft immersive worlds that capture the essence of each industry we touch. Scroll to experience the WebGrow360 narrative.</p>
         </div>
       </div>
     </section>
@@ -871,12 +912,12 @@
           <div class="n-title text-center"><span class="n-serif text-2xl md:text-3xl italic block mb-2">03. Build</span><span class="text-[9px] uppercase tracking-[0.3em] text-white/50">Engineering the experience</span></div>
         </div>
         <h2 class="n-title n-serif text-5xl md:text-8xl leading-none mb-9">Let's write your <br><span class="italic">next chapter.</span></h2>
-        <a href="mailto:contact@digibindmedia.com?subject=Discovery%20Call" data-nh class="n-title inline-block px-9 py-4 bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-white/85 transition-colors">Book a free discovery call</a>
+        <a href="mailto:Connect@team.webgrow360.online?subject=Discovery%20Call" data-nh class="n-title inline-block px-9 py-4 bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-white/85 transition-colors">Book a free discovery call</a>
         <div class="absolute bottom-8 w-full left-0 px-6 md:px-10 flex flex-col md:flex-row gap-2 md:gap-8 justify-between items-center n-title">
-          <p class="text-[10px] uppercase tracking-[0.25em] text-white/45">DigiBind Media © 2026 — Branding · Advertising · Marketing</p>
+          <p class="text-[10px] uppercase tracking-[0.25em] text-white/45">WebGrow360 © 2026 — Branding · Advertising · Marketing</p>
           <div class="flex gap-6 text-[10px] uppercase tracking-[0.25em] text-white/55">
-            <a href="mailto:contact@digibindmedia.com" data-nh class="hover:text-white">contact@digibindmedia.com</a>
-            <a href="tel:+916353528739" data-nh class="hover:text-white">+91 63535 28739</a>
+            <a href="mailto:Connect@team.webgrow360.online" data-nh class="hover:text-white">Connect@team.webgrow360.online</a>
+            <a href="tel:+918974332863" data-nh class="hover:text-white">+91 89743 32863</a>
           </div>
         </div>
       </div>
@@ -904,7 +945,10 @@
   document.documentElement.classList.add('ready');
 
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length>1){ var t=document.querySelector(id); if(t){ e.preventDefault(); closeMenu(); if(lenis){lenis.scrollTo(t,{offset:-8});} else {t.scrollIntoView({behavior:'smooth'});} } } });
+    a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length>1){ var t=document.querySelector(id); if(t){ e.preventDefault(); closeMenu();
+      // links clicked in soul mode leave the narrative overlay first, then scroll to the section on the main page
+      var wasSoul=document.body.classList.contains('soul'); if(wasSoul) document.getElementById('soul-btn').click();
+      setTimeout(function(){ if(lenis){lenis.scrollTo(t,{offset:-8});} else {t.scrollIntoView({behavior:'smooth'});} }, wasSoul?80:0); } } });
   });
 
   if('IntersectionObserver' in window){
@@ -945,7 +989,7 @@
   document.addEventListener('click',function(e){
     var item=e.target.closest('[data-type]'); if(!item) return;
     var type=item.getAttribute('data-type'), src=item.getAttribute('data-src');
-    box.innerHTML = type==='video' ? '<video autoplay loop controls playsinline><source src="'+src+'" type="video/mp4"></video>' : '<img src="'+src+'" alt="DigiBind Media work">';
+    box.innerHTML = type==='video' ? '<video autoplay loop controls playsinline><source src="'+src+'" type="video/mp4"></video>' : '<img src="'+src+'" alt="WebGrow360 work">';
     modal.style.display='block'; requestAnimationFrame(function(){modal.style.opacity='1';}); if(lenis)lenis.stop();
   });
   function closeModal(){ modal.style.opacity='0'; setTimeout(function(){ modal.style.display='none'; box.innerHTML=''; if(lenis)lenis.start(); },300); }
@@ -959,6 +1003,25 @@
   document.getElementById('menu-btn').addEventListener('click',openMenu);
   document.getElementById('menu-close').addEventListener('click',closeMenu);
   addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+
+  // header: solid bar once scrolled, hide on scroll down / show on scroll up (as on realestate.webgrow360.online)
+  (function(){
+    var head=document.getElementById('site-head'), mnu=document.getElementById('menu'), last=0;
+    function onScroll(){ var y=window.scrollY||0;
+      head.classList.toggle('scrolled', y>24);
+      head.classList.toggle('hide', y>last && y>320 && !mnu.classList.contains('open'));
+      last=y; }
+    addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  })();
+  // highlight the nav link for the section in view
+  (function(){
+    var map={}; document.querySelectorAll('.nav-link[href^="#"]').forEach(function(a){ var s=document.querySelector(a.getAttribute('href')); if(s) map[s.id]=a; });
+    if(!('IntersectionObserver' in window)) return;
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){
+      document.querySelectorAll('.nav-link.active').forEach(function(a){ a.classList.remove('active'); });
+      map[e.target.id].classList.add('active'); } }); },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){ io.observe(document.getElementById(id)); });
+  })();
 
   // ===== Narrative canvas (soul) =====
   var nv=document.getElementById('narrative'), nscroll=nv?nv.querySelector('.n-scroll'):null;

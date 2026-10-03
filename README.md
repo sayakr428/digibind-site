@@ -1,14 +1,13 @@
-# DigiBind Media — Website
+# WebGrow360 — Website
 
-A static, two-page marketing site for **DigiBind Media** (Branding · Advertising · Marketing). No build step — plain HTML + Tailwind (CDN) + GSAP/Lenis (CDN).
+A static, two-page marketing site for **WebGrow360** (Branding · Advertising · Marketing). No build step — plain HTML + Tailwind (CDN) + GSAP/Lenis (CDN).
 
 ## Pages
 - `index.html` — landing page (hero, services, reels, industry portfolio with rotate/stack scroll, analytics, clients, testimonials, process, tech stack, solutions, CTA). Includes **Soul Mode** (☯) — a full-screen "Narrative Canvas" experience.
-- `pricing.html` — plans (Ignite / Amplify / Dominate), Signature on-site production, transparency policy, and a live **cost calculator**.
+- `about.html` — About Us page (empty for now; header, menu and footer only).
 
 ## Assets
-- `assets/logo.png` — transparent logo (light theme)
-- `assets/logo_dark.png` — logo variant for dark / soul mode
+- `assets/webgrow360-mark.webp` — WebGrow360 brand mark (same as realestate.webgrow360.online); also the favicon. The "WEBGROW360 / ONLINE" wordmark is live text, so it adapts to light and soul mode.
 
 ## Run locally
 Open `index.html` in a browser, or serve the folder:
@@ -20,7 +19,7 @@ python3 -m http.server 3000
 ## Deploy to Netlify
 This folder is the deploy root (`publish = "."` in `netlify.toml`). Two options:
 
-**Drag & drop:** zip the site (or use the provided `digibindmedia_site.zip`) and drop it on https://app.netlify.com/drop
+**Drag & drop:** zip the site (or use the provided `webgrow360_site.zip`) and drop it on https://app.netlify.com/drop
 
 **Git / CLI:**
 ```bash
@@ -29,4 +28,4 @@ netlify deploy --prod        # from this folder, after `netlify link`
 No build command is required.
 
 ## Contact
-contact@digibindmedia.com · +91 63535 28739
+Connect@team.webgrow360.online · +91 89743 32863

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#f3f2ec" />
+
+<title>About Us — WebGrow360 Online</title>
+<meta name="description" content="About WebGrow360 Online." />
+<link rel="canonical" href="https://webgrow360.online/about" />
+<meta name="robots" content="index, follow" />
+
+<link rel="icon" type="image/webp" href="assets/webgrow360-mark.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@600&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: {
+    display:['Space Grotesk','sans-serif'], body:['Inter','sans-serif'], serif:['Cormorant Garamond','serif'], mono:['JetBrains Mono','monospace']
+  } } } };
+</script>
+
+
+<style>
+  :root{
+    --bg:#f3f2ec; --bg2:#eae9e1; --ink:#141318; --soft:#5d5c54;
+    --accent:#7c3aed; --accent2:#3b2a8c; --blue:#2f7fc4; --lime:#d8f263;
+    --card:#141318; --card-ink:#f3f2ec; --line:rgba(20,19,24,.12);
+  }
+  body.soul{
+    --bg:#070611; --bg2:#0e0c1c; --ink:#f1eefc; --soft:rgba(241,238,252,.6);
+    --accent:#a78bfa; --accent2:#8b5cf6; --blue:#6db4ff; --lime:#d8f263;
+    --card:#0e0c1c; --card-ink:#f1eefc; --line:rgba(241,238,252,.14);
+  }
+  html.lenis,html.lenis body{height:auto;}
+  .lenis.lenis-smooth{scroll-behavior:auto !important;}
+  *{ -ms-overflow-style:none; scrollbar-width:none; }
+  ::-webkit-scrollbar{ display:none; }
+  html{ overflow-x:clip; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; overflow-x:clip; max-width:100vw;
+    transition:background .7s cubic-bezier(.65,0,.35,1), color .7s cubic-bezier(.65,0,.35,1); }
+  @media(min-width:1024px){ body{cursor:none;} }
+  h1,h2,h3,.display{ font-family:'Space Grotesk',sans-serif; }
+  .soul-serif{ font-family:'Cormorant Garamond',serif; }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+
+  .reveal{ opacity:1; transform:none; }
+  html.ready .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  html.ready .reveal.in{ opacity:1; transform:none; }
+
+  #cursor{ position:fixed; left:0; top:0; width:92px; height:92px; transform:translate(-50%,-50%); pointer-events:none; z-index:9999; mix-blend-mode:difference; }
+  #cursor svg{ width:100%; height:100%; animation:spin 9s linear infinite; transition:scale .4s cubic-bezier(.16,1,.3,1); }
+  #cursor text{ fill:#fff; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:8.4px; letter-spacing:1.4px; text-transform:uppercase; }
+  #cur-dot{ position:absolute; left:50%; top:50%; width:7px; height:7px; border-radius:50%; background:#fff; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+  #cursor.link svg{ scale:.6; } #cursor.link #cur-dot{ width:16px; height:16px; }
+  @keyframes spin{ to{ rotate:360deg; } }
+  @media(max-width:1023px){ #cursor{ display:none; } }
+
+  .pill{ background:var(--accent); color:#fff; border-radius:999px; padding:.04em .36em .2em; display:inline-block; line-height:1.06; }
+  .grain{ position:fixed; inset:0; pointer-events:none; z-index:9998; opacity:.03;
+    background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)"/%3E%3C/svg%3E'); }
+
+  #soul-btn{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; flex:none; border:1px solid var(--line); background:transparent; color:var(--ink); font-size:18px; line-height:1; transition:transform .5s cubic-bezier(.16,1,.3,1), background .4s, color .4s; }
+  #soul-btn:hover{ transform:rotate(180deg); }
+  body.soul #soul-btn{ background:var(--lime); color:#141318; border-color:transparent; }
+
+  /* ===== Header — mirrors realestate.webgrow360.online ===== */
+  #site-head{ position:fixed; top:0; left:0; right:0; z-index:58; padding:14px clamp(12px,2.2vw,32px) 0; transition:transform .46s cubic-bezier(.32,.72,0,1); }
+  #site-head.hide{ transform:translateY(-120%); }
+  /* glass pill, tinted with --ink so it always contrasts the page (dark glass on light, light glass in soul mode) */
+  #site-head .bar{ max-width:96rem; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; border-radius:999px; padding:8px 8px 8px 22px;
+    color:var(--bg); background-color:color-mix(in oklab, var(--ink) 80%, transparent);
+    background-image:linear-gradient(180deg, color-mix(in oklab, var(--bg) 12%, transparent), transparent 55%);
+    backdrop-filter:blur(20px) saturate(170%); -webkit-backdrop-filter:blur(20px) saturate(170%);
+    border:1px solid color-mix(in oklab, var(--bg) 18%, transparent);
+    box-shadow:inset 0 1px 0 color-mix(in oklab, var(--bg) 22%, transparent), 0 14px 36px -14px rgba(0,0,0,.35);
+    transition:background-color .5s cubic-bezier(.32,.72,0,1), box-shadow .5s cubic-bezier(.32,.72,0,1); }
+  #site-head.scrolled .bar{ background-color:color-mix(in oklab, var(--ink) 86%, transparent); }
+  .wg-logo{ display:inline-flex; align-items:center; gap:.65rem; flex:none; font-size:16px; color:inherit; transition:opacity .3s; }
+  .wg-logo:hover{ opacity:.7; }
+  .wg-logo img{ width:2.05em; height:2.05em; object-fit:contain; flex:none; }
+  .wg-word{ display:flex; flex-direction:column; line-height:1; }
+  .wg-word b{ font-family:'Instrument Sans','Inter',sans-serif; font-weight:600; letter-spacing:.11em; }
+  .wg-word small{ margin-top:.34em; font-family:'Azeret Mono',monospace; font-size:.58em; letter-spacing:.36em; opacity:.7; }
+  .nav-links{ display:none; align-items:center; gap:4px; }
+  .nav-link{ position:relative; padding:10px 16px; border-radius:999px; font-size:15px; color:color-mix(in oklab, var(--bg) 68%, transparent); transition:color .3s, background .3s; }
+  .nav-link:hover,.nav-link.active{ color:var(--bg); }
+  .nav-link:hover{ background:color-mix(in oklab, var(--bg) 10%, transparent); }
+  .nav-link::after{ content:''; position:absolute; left:50%; top:50%; width:4px; height:4px; border-radius:50%; background:var(--accent); transform:translate(-50%,.85rem); opacity:0; transition:opacity .3s; }
+  .nav-link.active::after{ opacity:1; }
+  .nav-cta{ display:none; padding:10px 20px; border-radius:999px; font-size:15px; font-weight:500; background:var(--accent); color:#fff; white-space:nowrap; transition:background .5s; }
+  @media(min-width:1024px){ .nav-links{ display:flex; } .nav-cta{ display:inline-block; } }
+  #site-head #menu-btn{ background:var(--bg); color:var(--ink); }
+  #site-head #soul-btn{ color:var(--bg); border-color:color-mix(in oklab, var(--bg) 25%, transparent); }
+  body.soul #site-head #soul-btn{ color:#141318; }
+  body.soul .nav-cta{ color:#141318; }
+
+  #menu-btn{ display:flex; align-items:center; gap:9px; font-size:13px; font-weight:600; padding:10px 18px; border-radius:999px; background:var(--ink); color:var(--bg); }
+  #menu-btn .bars{ width:16px; height:10px; position:relative; }
+  #menu-btn .bars span{ position:absolute; left:0; width:16px; height:1.5px; background:currentColor; }
+  #menu-btn .bars span:nth-child(1){ top:0; } #menu-btn .bars span:nth-child(2){ bottom:0; }
+  #menu{ position:fixed; inset:0; z-index:60; background:var(--ink); color:var(--bg); display:flex; flex-direction:column; justify-content:center; padding:0 6vw;
+    clip-path:circle(0% at 92% 5%); transition:clip-path .7s cubic-bezier(.76,0,.24,1); pointer-events:none; }
+  #menu.open{ clip-path:circle(150% at 92% 5%); pointer-events:auto; }
+  .menu-link{ display:block; font-family:'Space Grotesk'; font-weight:600; letter-spacing:-.02em; line-height:1.08; font-size:clamp(2.6rem,11vw,7rem); opacity:.55; transition:opacity .3s, transform .5s cubic-bezier(.16,1,.3,1); }
+  .menu-link:hover{ opacity:1; transform:translateX(18px); }
+  .menu-idx{ font-size:.85rem; vertical-align:super; opacity:.5; margin-left:.4rem; font-family:'Inter'; }
+
+  /* ===== Phone & tablet optimisation ===== */
+  @media(max-width:640px){
+    /* Menu overlay scrolls + nav stays compact */
+    #menu{ overflow-y:auto; justify-content:flex-start; padding-top:6rem; padding-bottom:3rem; }
+    .menu-link{ font-size:clamp(2.1rem,12vw,3.4rem); }
+    .wg-logo{ font-size:14px; }
+    #menu-btn{ padding:9px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div id="cursor"><span id="cur-dot"></span>
+  <svg viewBox="0 0 96 96"><defs><path id="cpath" d="M48,48 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"></path></defs>
+  <text><textPath href="#cpath" startOffset="0">BRANDING • ADVERTISING • MARKETING • </textPath></text></svg>
+</div>
+
+<!-- NAV -->
+<header id="site-head">
+  <div class="bar">
+    <a href="index.html" id="logo" class="wg-logo" data-c="link" aria-label="WEBGROW360 home">
+      <img src="assets/webgrow360-mark.webp" alt="" aria-hidden="true">
+      <span class="wg-word"><b>WEBGROW360</b><small>ONLINE</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#industries" class="nav-link" data-c="link">Our Work</a>
+      <a href="index.html#services" class="nav-link" data-c="link">Services</a>
+      <a href="index.html#solutions" class="nav-link" data-c="link">Solutions</a>
+      <a href="about.html" class="nav-link active" data-c="link" aria-current="page">About Us</a>
+      <a href="index.html#connect" class="nav-link" data-c="link">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="index.html#connect" class="nav-cta" data-c="link">Start a project</a>
+      <button id="soul-btn" data-c="link" aria-label="Toggle soul mode" title="Soul mode">☯</button>
+      <button id="menu-btn" data-c="link" aria-label="Open menu"><span class="bars"><span></span><span></span></span>Menu</button>
+    </div>
+  </div>
+</header>
+
+<div id="menu">
+  <button id="menu-close" class="absolute top-6 right-6 md:right-9 text-sm uppercase tracking-[0.2em]" data-c="link">Close ✕</button>
+  <nav class="flex flex-col gap-1">
+    <a href="index.html#industries" class="menu-link" data-c="link">Our Work<span class="menu-idx">01</span></a>
+    <a href="index.html#services" class="menu-link" data-c="link">Services<span class="menu-idx">02</span></a>
+    <a href="index.html#solutions" class="menu-link" data-c="link">Solutions<span class="menu-idx">03</span></a>
+    <a href="about.html" class="menu-link" data-c="link">About Us<span class="menu-idx">04</span></a>
+    <a href="index.html#connect" class="menu-link" data-c="link">Contact<span class="menu-idx">05</span></a>
+  </nav>
+  <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
+    <a href="mailto:Connect@team.webgrow360.online?subject=Discovery%20Call" class="inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-sm self-start" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
+    <div class="text-sm opacity-70">
+      <a href="mailto:Connect@team.webgrow360.online" class="block" data-c="link">Connect@team.webgrow360.online</a>
+      <a href="tel:+918974332863" class="block mt-1" data-c="link">+91 89743 32863</a>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ABOUT US — content to come -->
+  <section class="min-h-[80vh] px-5 md:px-9 pt-32 md:pt-40 pb-10"></section>
+
+  <!-- FOOTER -->
+  <footer class="px-5 md:px-9 py-14 border-t" style="border-color:var(--line)">
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-7">
+      <p class="max-w-md text-base md:text-lg leading-relaxed">
+        <span class="display font-bold">WebGrow360.</span> A creative agency binding brand, story and data into branding, advertising and marketing that earns attention — and converts it.
+      </p>
+      <div class="text-sm md:text-right" style="color:var(--soft)">
+        <a href="mailto:Connect@team.webgrow360.online" class="block text-base md:text-lg display" style="color:var(--ink)" data-c="link">Connect@team.webgrow360.online</a>
+        <a href="tel:+918974332863" class="block text-base md:text-lg display mt-1" style="color:var(--ink)" data-c="link">+91 89743 32863</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var lenis=null;
+  try{ if(window.Lenis){ lenis=new Lenis({duration:1.1, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true, smoothTouch:false}); requestAnimationFrame(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }); } }catch(e){}
+  document.documentElement.classList.add('ready');
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0.08, rootMargin:'0px 0px -5% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  // cursor
+  var cursor=document.getElementById('cursor');
+  if(window.matchMedia('(min-width:1024px)').matches){
+    var mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+    addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+    (function loop(){ cx+=(mx-cx)*0.18; cy+=(my-cy)*0.18; cursor.style.left=cx+'px'; cursor.style.top=cy+'px'; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover',function(e){ var t=e.target.closest('[data-c]'); cursor.classList.remove('link'); if(t){ cursor.classList.add(t.getAttribute('data-c')); } });
+  }
+
+  // menu
+  var menu=document.getElementById('menu');
+  function closeMenu(){ menu.classList.remove('open'); if(lenis)lenis.start(); }
+  document.getElementById('menu-btn').addEventListener('click',function(){ menu.classList.add('open'); if(lenis)lenis.stop(); });
+  document.getElementById('menu-close').addEventListener('click',closeMenu);
+  document.querySelectorAll('.menu-link').forEach(function(l){ l.addEventListener('click',closeMenu); });
+
+  // header: solid bar once scrolled, hide on scroll down / show on scroll up (as on realestate.webgrow360.online)
+  (function(){
+    var head=document.getElementById('site-head'), mnu=document.getElementById('menu'), last=0;
+    function onScroll(){ var y=window.scrollY||0;
+      head.classList.toggle('scrolled', y>24);
+      head.classList.toggle('hide', y>last && y>320 && !mnu.classList.contains('open'));
+      last=y; }
+    addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  })();
+  addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+
+  // soul
+  document.getElementById('soul-btn').addEventListener('click',function(){
+    var on=document.body.classList.toggle('soul');
+    var tc=document.querySelector('meta[name=theme-color]'); if(tc)tc.setAttribute('content',on?'#070611':'#f3f2ec');
+  });
+
+})();
+</script>
+</body>
+</html>

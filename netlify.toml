@@ -1,12 +1,12 @@
-# DigiBind Media — static site (no build step)
+# WebGrow360 — static site (no build step)
 [build]
   publish = "."
   command = ""
 
-# Clean URLs: /pricing serves pricing.html
+# Clean URLs: /about serves about.html
 [[redirects]]
-  from = "/pricing"
-  to = "/pricing.html"
+  from = "/about"
+  to = "/about.html"
   status = 200
 
 [[headers]]
