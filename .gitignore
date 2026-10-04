@@ -2,3 +2,6 @@
 *.zip
 node_modules/
 .netlify/
+
+# original video uploads (the site uses the compressed copies in assets/reels/)
+assets/services/*.mp4

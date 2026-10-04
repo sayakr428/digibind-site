@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#f3f2ec" />
+
+<title>Reels &amp; Short-Form Video — WebGrow360</title>
+<meta name="description" content="Hook-first reels, UGC and motion from WebGrow360 — short-form video built around the first 1.5 seconds to stop the thumb and lower cost per result." />
+<link rel="canonical" href="https://webgrow360.online/reels" />
+<meta name="robots" content="index, follow" />
+
+<link rel="icon" type="image/webp" href="assets/webgrow360-mark.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@600&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: {
+    display:['Space Grotesk','sans-serif'], body:['Inter','sans-serif'], serif:['Cormorant Garamond','serif'], mono:['JetBrains Mono','monospace']
+  } } } };
+</script>
+
+
+<style>
+  :root{
+    --bg:#f3f2ec; --bg2:#eae9e1; --ink:#141318; --soft:#5d5c54;
+    --accent:#7c3aed; --accent2:#3b2a8c; --blue:#2f7fc4; --lime:#d8f263;
+    --card:#141318; --card-ink:#f3f2ec; --line:rgba(20,19,24,.12);
+  }
+  body.soul{
+    --bg:#070611; --bg2:#0e0c1c; --ink:#f1eefc; --soft:rgba(241,238,252,.6);
+    --accent:#a78bfa; --accent2:#8b5cf6; --blue:#6db4ff; --lime:#d8f263;
+    --card:#0e0c1c; --card-ink:#f1eefc; --line:rgba(241,238,252,.14);
+  }
+  html.lenis,html.lenis body{height:auto;}
+  .lenis.lenis-smooth{scroll-behavior:auto !important;}
+  *{ -ms-overflow-style:none; scrollbar-width:none; }
+  ::-webkit-scrollbar{ display:none; }
+  html{ overflow-x:clip; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; overflow-x:clip; max-width:100vw;
+    transition:background .7s cubic-bezier(.65,0,.35,1), color .7s cubic-bezier(.65,0,.35,1); }
+  @media(min-width:1024px){ body{cursor:none;} }
+  h1,h2,h3,.display{ font-family:'Space Grotesk',sans-serif; }
+  .soul-serif{ font-family:'Cormorant Garamond',serif; }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+
+  .reveal{ opacity:1; transform:none; }
+  html.ready .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  html.ready .reveal.in{ opacity:1; transform:none; }
+
+  #cursor{ position:fixed; left:0; top:0; width:92px; height:92px; transform:translate(-50%,-50%); pointer-events:none; z-index:9999; mix-blend-mode:difference; }
+  #cursor svg{ width:100%; height:100%; animation:spin 9s linear infinite; transition:scale .4s cubic-bezier(.16,1,.3,1); }
+  #cursor text{ fill:#fff; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:8.4px; letter-spacing:1.4px; text-transform:uppercase; }
+  #cur-dot{ position:absolute; left:50%; top:50%; width:7px; height:7px; border-radius:50%; background:#fff; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+  #cursor.link svg{ scale:.6; } #cursor.link #cur-dot{ width:16px; height:16px; }
+  @keyframes spin{ to{ rotate:360deg; } }
+  @media(max-width:1023px){ #cursor{ display:none; } }
+
+  .pill{ background:var(--accent); color:#fff; border-radius:999px; padding:.04em .36em .2em; display:inline-block; line-height:1.06; }
+  .grain{ position:fixed; inset:0; pointer-events:none; z-index:9998; opacity:.03;
+    background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)"/%3E%3C/svg%3E'); }
+
+  #soul-btn{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; flex:none; border:1px solid var(--line); background:transparent; color:var(--ink); font-size:18px; line-height:1; transition:transform .5s cubic-bezier(.16,1,.3,1), background .4s, color .4s; }
+  #soul-btn:hover{ transform:rotate(180deg); }
+  body.soul #soul-btn{ background:var(--lime); color:#141318; border-color:transparent; }
+
+  /* ===== Header — mirrors realestate.webgrow360.online ===== */
+  #site-head{ position:fixed; top:0; left:0; right:0; z-index:58; padding:14px clamp(12px,2.2vw,32px) 0; transition:transform .46s cubic-bezier(.32,.72,0,1); }
+  #site-head.hide{ transform:translateY(-120%); }
+  /* glass pill, tinted with --ink so it always contrasts the page (dark glass on light, light glass in soul mode) */
+  #site-head .bar{ max-width:96rem; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; border-radius:999px; padding:8px 8px 8px 22px;
+    color:var(--bg); background-color:color-mix(in oklab, var(--ink) 80%, transparent);
+    background-image:linear-gradient(180deg, color-mix(in oklab, var(--bg) 12%, transparent), transparent 55%);
+    backdrop-filter:blur(20px) saturate(170%); -webkit-backdrop-filter:blur(20px) saturate(170%);
+    border:1px solid color-mix(in oklab, var(--bg) 18%, transparent);
+    box-shadow:inset 0 1px 0 color-mix(in oklab, var(--bg) 22%, transparent), 0 14px 36px -14px rgba(0,0,0,.35);
+    transition:background-color .5s cubic-bezier(.32,.72,0,1), box-shadow .5s cubic-bezier(.32,.72,0,1); }
+  #site-head.scrolled .bar{ background-color:color-mix(in oklab, var(--ink) 86%, transparent); }
+  .wg-logo{ display:inline-flex; align-items:center; gap:.65rem; flex:none; font-size:16px; color:inherit; transition:opacity .3s; }
+  .wg-logo:hover{ opacity:.7; }
+  .wg-logo img{ width:2.05em; height:2.05em; object-fit:contain; flex:none; }
+  .wg-word{ display:flex; flex-direction:column; line-height:1; }
+  .wg-word b{ font-family:'Instrument Sans','Inter',sans-serif; font-weight:600; letter-spacing:.11em; }
+  .wg-word small{ margin-top:.34em; font-family:'Azeret Mono',monospace; font-size:.58em; letter-spacing:.36em; opacity:.7; }
+  .nav-links{ display:none; align-items:center; gap:4px; }
+  .nav-link{ position:relative; padding:10px 16px; border-radius:999px; font-size:15px; color:color-mix(in oklab, var(--bg) 68%, transparent); transition:color .3s, background .3s; }
+  .nav-link:hover,.nav-link.active{ color:var(--bg); }
+  .nav-link:hover{ background:color-mix(in oklab, var(--bg) 10%, transparent); }
+  .nav-link::after{ content:''; position:absolute; left:50%; top:50%; width:4px; height:4px; border-radius:50%; background:var(--accent); transform:translate(-50%,.85rem); opacity:0; transition:opacity .3s; }
+  .nav-link.active::after{ opacity:1; }
+  .nav-cta{ display:none; padding:10px 20px; border-radius:999px; font-size:15px; font-weight:500; background:var(--accent); color:#fff; white-space:nowrap; transition:background .5s; }
+  @media(min-width:1024px){ .nav-links{ display:flex; } .nav-cta{ display:inline-block; } }
+  #site-head #menu-btn{ background:var(--bg); color:var(--ink); }
+  #site-head #soul-btn{ color:var(--bg); border-color:color-mix(in oklab, var(--bg) 25%, transparent); }
+  body.soul #site-head #soul-btn{ color:#141318; }
+  body.soul .nav-cta{ color:#141318; }
+
+  #menu-btn{ display:flex; align-items:center; gap:9px; font-size:13px; font-weight:600; padding:10px 18px; border-radius:999px; background:var(--ink); color:var(--bg); }
+  #menu-btn .bars{ width:16px; height:10px; position:relative; }
+  #menu-btn .bars span{ position:absolute; left:0; width:16px; height:1.5px; background:currentColor; }
+  #menu-btn .bars span:nth-child(1){ top:0; } #menu-btn .bars span:nth-child(2){ bottom:0; }
+  #menu{ position:fixed; inset:0; z-index:60; background:var(--ink); color:var(--bg); display:flex; flex-direction:column; justify-content:center; padding:0 6vw;
+    clip-path:circle(0% at 92% 5%); transition:clip-path .7s cubic-bezier(.76,0,.24,1); pointer-events:none; }
+  #menu.open{ clip-path:circle(150% at 92% 5%); pointer-events:auto; }
+  .menu-link{ display:block; font-family:'Space Grotesk'; font-weight:600; letter-spacing:-.02em; line-height:1.08; font-size:clamp(2.6rem,11vw,7rem); opacity:.55; transition:opacity .3s, transform .5s cubic-bezier(.16,1,.3,1); }
+  .menu-link:hover{ opacity:1; transform:translateX(18px); }
+  .menu-idx{ font-size:.85rem; vertical-align:super; opacity:.5; margin-left:.4rem; font-family:'Inter'; }
+
+  /* ===== Phone & tablet optimisation ===== */
+  @media(max-width:640px){
+    /* Menu overlay scrolls + nav stays compact */
+    #menu{ overflow-y:auto; justify-content:flex-start; padding-top:6rem; padding-bottom:3rem; }
+    .menu-link{ font-size:clamp(2.1rem,12vw,3.4rem); }
+    .wg-logo{ font-size:14px; }
+    #menu-btn{ padding:9px 14px; }
+  }
+
+  /* ===== Service pages ===== */
+  body{ --svc:var(--accent); --svc-on:#fff; --chip:#fff; --chip-on:#141318; }
+  body.soul{ --svc-on:#141318; }
+  html{ scroll-padding-top:110px; }
+  section[id]{ scroll-margin-top:110px; }
+  .skip{ position:fixed; left:12px; top:-60px; z-index:100; padding:10px 16px; border-radius:999px; background:var(--ink); color:var(--bg); font-size:14px; transition:top .2s; }
+  .skip:focus{ top:12px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:12px; }
+  h1,h2,h3{ text-wrap:balance; } p{ text-wrap:pretty; }
+  .kick{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+  .crumbs{ display:flex; gap:.5rem; align-items:center; font-size:13px; color:var(--soft); margin-bottom:1.6rem; }
+  .crumbs a{ text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--line); transition:color .25s; }
+  .crumbs a:hover{ color:var(--ink); }
+  h1 em, h2 em{ font-style:italic; font-weight:500; color:var(--accent); }
+  .btn{ display:inline-flex; align-items:center; gap:.6rem; min-height:48px; padding:0 1.5rem; border-radius:999px; font-weight:600; font-size:15px;
+    transition:transform .35s cubic-bezier(.16,1,.3,1), background-color .3s, color .3s, box-shadow .3s; touch-action:manipulation; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--ink); color:var(--bg); box-shadow:0 10px 26px -14px rgba(0,0,0,.5); }
+  .btn-primary:hover{ background:var(--accent); color:#fff; }
+  .btn-ghost{ border:1px solid var(--line); }
+  .btn-ghost:hover{ border-color:var(--ink); }
+  .btn .arr{ transition:transform .35s cubic-bezier(.16,1,.3,1); }
+  .btn:hover .arr{ transform:translate(2px,-2px); }
+
+  /* hero image: clip reveal + gentle parallax */
+  .hero-fig{ position:relative; border-radius:28px; overflow:hidden; aspect-ratio:4/5; background:var(--bg2); }
+  .hero-fig img{ width:100%; height:112%; object-fit:cover; display:block; will-change:transform; }
+  html.ready .hero-fig{ clip-path:inset(12% 12% 12% 12% round 28px); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); }
+  html.ready .hero-fig.in{ clip-path:inset(0 0 0 0 round 28px); }
+  .hero-fig figcaption{ position:absolute; left:14px; right:14px; bottom:14px; padding:12px 16px; border-radius:16px; font-size:13px; color:#fff;
+    background:rgba(20,19,24,.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,.18); }
+  .svc-badge{ display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .9rem; border-radius:999px; background:var(--svc); color:var(--svc-on); font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+  .svc-badge i{ width:7px; height:7px; border-radius:50%; background:var(--chip); }
+
+  /* marquee */
+  .marquee{ overflow:hidden; border-block:1px solid var(--line); padding:1.1rem 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+  .marquee .track{ display:flex; width:max-content; gap:2.6rem; animation:mq 38s linear infinite; }
+  .marquee:hover .track{ animation-play-state:paused; }
+  .marquee span{ font-family:'Space Grotesk'; font-size:clamp(1.4rem,3vw,2.4rem); font-weight:600; letter-spacing:-.02em; white-space:nowrap; display:inline-flex; align-items:center; gap:2.6rem; }
+  .marquee span::after{ content:'✦'; font-size:.55em; color:var(--accent); }
+  @keyframes mq{ to{ transform:translateX(-50%); } }
+
+  /* deliverables list with cursor spotlight */
+  .dl li{ position:relative; display:grid; grid-template-columns:3.2rem 1fr; gap:1rem; padding:1.6rem 1.2rem; border-top:1px solid var(--line); border-radius:18px; isolation:isolate; }
+  .dl li:last-child{ border-bottom:1px solid var(--line); }
+  .dl li::before{ content:''; position:absolute; inset:0; z-index:-1; border-radius:18px; opacity:0; transition:opacity .35s;
+    background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%), color-mix(in oklab, var(--accent) 12%, transparent), transparent 70%); }
+  .dl li:hover::before{ opacity:1; }
+  .dl .n{ font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); padding-top:.35rem; font-variant-numeric:tabular-nums; }
+  .dl h3{ font-size:clamp(1.25rem,2vw,1.6rem); font-weight:600; letter-spacing:-.01em; }
+  .dl p{ margin-top:.35rem; color:var(--soft); max-width:46ch; line-height:1.6; }
+
+  /* bento */
+  .bento{ display:grid; gap:14px; grid-template-columns:1fr; }
+  @media(min-width:900px){ .bento{ grid-template-columns:1.25fr .9fr; grid-template-rows:auto auto; } .bento .b-a{ grid-row:span 2; } }
+  .bento figure{ position:relative; border-radius:24px; overflow:hidden; background:var(--bg2); min-height:260px; }
+  .bento img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform 1.1s cubic-bezier(.16,1,.3,1); }
+  .bento figure:hover img{ transform:scale(1.045); }
+  .principle{ border-radius:24px; padding:clamp(1.6rem,3vw,2.6rem); background:var(--svc); color:var(--svc-on); display:flex; flex-direction:column; justify-content:space-between; gap:2rem; min-height:260px; border:1px solid var(--line); }
+  .principle blockquote{ font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.4vw,2.9rem); line-height:1.08; font-weight:500; }
+
+  /* process with progress rail */
+  .steps{ position:relative; display:grid; gap:1.4rem; grid-template-columns:1fr; counter-reset:s; }
+  @media(min-width:900px){ .steps{ grid-template-columns:repeat(4,1fr); } }
+  .rail{ display:none; }
+  @media(min-width:900px){ .rail{ display:block; position:absolute; left:24px; right:calc((100% - 4.2rem) / 4 - 24px); top:23px; height:2px; background:var(--line); }
+    .rail i{ position:absolute; inset:0; transform-origin:left; transform:scaleX(var(--p,0)); background:var(--accent); transition:transform .6s cubic-bezier(.16,1,.3,1); } }
+  .step .dot{ position:relative; width:48px; height:48px; border-radius:50%; display:grid; place-items:center; font-weight:600; font-family:'Space Grotesk';
+    background:var(--bg); border:1.5px solid var(--line); transition:background-color .4s, color .4s, border-color .4s; font-variant-numeric:tabular-nums; }
+  .step.on .dot{ background:var(--svc); color:var(--svc-on); border-color:var(--svc); }
+  .step h3{ margin-top:1.1rem; font-size:1.35rem; font-weight:600; }
+  .step p{ margin-top:.4rem; color:var(--soft); line-height:1.6; }
+
+  /* fit */
+  .fit{ display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:24px; overflow:hidden; grid-template-columns:1fr; }
+  @media(min-width:760px){ .fit{ grid-template-columns:1fr 1fr; } }
+  .fit div{ background:var(--bg); padding:1.7rem 1.6rem; transition:background-color .3s; }
+  .fit div:hover{ background:var(--bg2); }
+  .fit h3{ font-size:1.2rem; font-weight:600; } .fit p{ margin-top:.4rem; color:var(--soft); line-height:1.6; }
+
+  /* faq */
+  .faq details{ border-top:1px solid var(--line); }
+  .faq details:last-child{ border-bottom:1px solid var(--line); }
+  .faq summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1.2rem; padding:1.4rem .2rem; font-family:'Space Grotesk'; font-size:clamp(1.1rem,1.8vw,1.35rem); font-weight:600; min-height:48px; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq .pm{ flex:none; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); position:relative; transition:transform .4s cubic-bezier(.16,1,.3,1), background-color .3s; }
+  .faq .pm::before,.faq .pm::after{ content:''; position:absolute; left:50%; top:50%; width:12px; height:1.5px; background:currentColor; transform:translate(-50%,-50%); }
+  .faq .pm::after{ transform:translate(-50%,-50%) rotate(90deg); transition:transform .4s; }
+  .faq details[open] .pm{ background:var(--svc); color:var(--svc-on); border-color:var(--svc); }
+  .faq details[open] .pm::after{ transform:translate(-50%,-50%) rotate(0deg); }
+  .faq .ans{ padding:0 .2rem 1.5rem; color:var(--soft); line-height:1.7; max-width:68ch; }
+
+  /* next service */
+  .next{ position:relative; display:grid; border-radius:28px; overflow:hidden; min-height:340px; isolation:isolate; color:#fff; }
+  .next img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; transition:transform 1.2s cubic-bezier(.16,1,.3,1); }
+  .next::after{ content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, rgba(10,9,14,.15), rgba(10,9,14,.78)); }
+  .next:hover img{ transform:scale(1.05); }
+  .next .go{ width:64px; height:64px; border-radius:50%; display:grid; place-items:center; background:#fff; color:#141318; font-size:22px; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+  .next:hover .go{ transform:rotate(45deg); }
+
+  /* closing CTA */
+  .cta{ border-radius:32px; background:var(--svc); color:var(--svc-on); padding:clamp(2.2rem,6vw,5rem); border:1px solid var(--line); }
+  .cta .btn-primary{ background:var(--chip); color:var(--chip-on); }
+  .cta .btn-primary:hover{ background:var(--ink); color:var(--bg); }
+  .cta .btn-ghost{ border-color:currentColor; }
+
+
+  /* deliverable hover preview — same floating peek as the home page's industry list */
+  #peek{ position:fixed; top:0; left:0; width:300px; height:215px; z-index:55; border-radius:16px; overflow:hidden; pointer-events:none; background:var(--bg2);
+    opacity:0; transform:translate(-50%,-50%) scale(.84) rotate(-2deg); transition:opacity .35s ease, transform .45s cubic-bezier(.16,1,.3,1); box-shadow:0 30px 60px -22px rgba(0,0,0,.5); }
+  #peek.on{ opacity:1; transform:translate(-50%,-50%) scale(1) rotate(-2deg); }
+  #peek img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .4s; }
+  #peek img.on{ opacity:1; }
+  .dl li[data-peek]{ cursor:default; }
+  @media(max-width:1023px), (hover:none){ #peek{ display:none; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .marquee .track{ animation:none; }
+    html.ready .reveal, html.ready .hero-fig{ opacity:1 !important; transform:none !important; clip-path:none !important; transition:none !important; }
+    .hero-fig img{ transform:none !important; }
+    .bento img, .next img, .btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<div class="grain"></div>
+<div id="peek" aria-hidden="true"></div>
+<div id="cursor"><span id="cur-dot"></span>
+  <svg viewBox="0 0 96 96"><defs><path id="cpath" d="M48,48 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"></path></defs>
+  <text><textPath href="#cpath" startOffset="0">BRANDING • ADVERTISING • MARKETING • </textPath></text></svg>
+</div>
+
+<!-- NAV -->
+<header id="site-head">
+  <div class="bar">
+    <a href="index.html" id="logo" class="wg-logo" data-c="link" aria-label="WEBGROW360 ONLINE — home">
+      <img src="assets/webgrow360-mark.webp" alt="" aria-hidden="true">
+      <span class="wg-word"><b>WEBGROW360</b> <small>ONLINE</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#industries" class="nav-link" data-c="link">Our Work</a>
+      <a href="index.html#services" class="nav-link active" data-c="link">Services</a>
+      <a href="index.html#solutions" class="nav-link" data-c="link">Solutions</a>
+      <a href="about.html" class="nav-link" data-c="link">About Us</a>
+      <a href="contact.html" class="nav-link" data-c="link">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="nav-cta" data-c="link">Start a project</a>
+      <button id="soul-btn" data-c="link" aria-label="Toggle soul mode" title="Soul mode">☯</button>
+      <button id="menu-btn" data-c="link" aria-label="Open menu"><span class="bars"><span></span><span></span></span>Menu</button>
+    </div>
+  </div>
+</header>
+
+<div id="menu">
+  <button id="menu-close" class="absolute top-6 right-6 md:right-9 text-sm uppercase tracking-[0.2em]" data-c="link">Close ✕</button>
+  <nav class="flex flex-col gap-1">
+    <a href="index.html#industries" class="menu-link" data-c="link">Our Work<span class="menu-idx">01</span></a>
+    <a href="index.html#services" class="menu-link" data-c="link">Services<span class="menu-idx">02</span></a>
+    <a href="index.html#solutions" class="menu-link" data-c="link">Solutions<span class="menu-idx">03</span></a>
+    <a href="about.html" class="menu-link" data-c="link">About Us<span class="menu-idx">04</span></a>
+    <a href="contact.html" class="menu-link" data-c="link">Contact<span class="menu-idx">05</span></a>
+  </nav>
+  <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
+    <a href="contact.html" class="inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-sm self-start" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
+    <div class="text-sm opacity-70">
+      <a href="mailto:Connect@team.webgrow360.online" class="block" data-c="link">Connect@team.webgrow360.online</a>
+      <a href="tel:+918974332863" class="block mt-1" data-c="link">+91 89743 32863</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="px-5 md:px-9 pt-32 md:pt-40 pb-14 md:pb-20">
+    <div class="max-w-[1400px] mx-auto grid lg:grid-cols-[1.1fr_.9fr] gap-10 lg:gap-16 items-center">
+      <div>
+        <nav aria-label="Breadcrumb" class="crumbs reveal"><a href="index.html#services" data-c="link">Services</a><span aria-hidden="true">/</span><span aria-current="page">Reels &amp; Short-Form</span></nav>
+        <span class="svc-badge reveal"><i aria-hidden="true"></i>02 · Video</span>
+        <h1 class="reveal display mt-6 text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.95]">Stop the thumb in <em class="soul-serif">1.5 seconds.</em></h1>
+        <p class="reveal mt-7 max-w-xl text-base md:text-lg leading-relaxed" style="color:var(--soft)">Hook-first reels, UGC and motion built around the first 1.5 seconds — engineered to stop the thumb and lower cost per result.</p>
+        <div class="reveal mt-9 flex flex-wrap gap-3">
+          <a href="contact.html?service=reels" class="btn btn-primary" data-c="link">Start a video project <span class="arr" aria-hidden="true">↗</span></a>
+          <a href="#process" class="btn btn-ghost" data-c="link">See How It Works</a>
+        </div>
+      </div>
+      <figure class="hero-fig reveal-clip">
+        <img src="assets/services/reels-1.webp" alt="Video editing timeline with colour-coded clips on a monitor" width="1600" height="1067" fetchpriority="high" decoding="async" class="js-parallax">
+        <figcaption>Every cut is a decision about attention.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track"><span>Hooks</span><span>Scripts</span><span>Reels</span><span>Shorts</span><span>UGC</span><span>Motion graphics</span><span>Captions</span><span>Sound design</span><span>Hooks</span><span>Scripts</span><span>Reels</span><span>Shorts</span><span>UGC</span><span>Motion graphics</span><span>Captions</span><span>Sound design</span></div></div>
+
+  <!-- WHAT YOU GET -->
+  <section id="deliverables" class="px-5 md:px-9 py-20 md:py-28">
+    <div class="max-w-[1400px] mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-20">
+      <div class="lg:sticky lg:top-32 self-start">
+        <p class="kick reveal">What you get</p>
+        <h2 class="reveal display mt-4 text-4xl md:text-6xl font-bold tracking-tight leading-[1]">Six deliverables, <em class="soul-serif">one system.</em></h2>
+        <p class="reveal mt-5 max-w-md leading-relaxed" style="color:var(--soft)">Short-form is a craft of seconds. We plan, shoot and cut for the scroll, not for the edit suite.</p>
+      </div>
+      <ol class="dl js-spot">
+          <li class="reveal" data-peek="assets/services/peek/1454165804606-c3d57bc86b40.webp|assets/services/peek/1515378960530-7c0da6231fb1.webp|assets/services/peek/1586281380349-632531db7ed4.webp"><span class="n">01</span><div><h3>Hook-first scripting</h3><p>Opening lines, visuals and on-screen text written to earn the next second, then the next.</p></div></li>
+          <li class="reveal" data-peek="assets/services/peek/1485846234645-a62644f84728.webp|assets/services/peek/1533488765986-dfa2a9939acd.webp|assets/services/peek/1502982720700-bfff97f2ecac.webp"><span class="n">02</span><div><h3>Shoot direction</h3><p>On-location or studio shoots planned shot by shot, so nothing is wasted on the day.</p></div></li>
+          <li class="reveal" data-peek="assets/services/peek/1563986768609-322da13575f3.webp|assets/services/peek/1611095973763-414019e72400.webp|assets/services/peek/1634942537034-2531766767d1.webp"><span class="n">03</span><div><h3>UGC &amp; creator content</h3><p>Creator-led videos that feel native to the feed, briefed and edited to stay on-message.</p></div></li>
+          <li class="reveal" data-peek="assets/services/reels-1.webp|assets/services/peek/1626785774625-ddcddc3445e9.webp|assets/services/peek/1621111848501-8d3634f82336.webp"><span class="n">04</span><div><h3>Editing &amp; motion</h3><p>Pacing, transitions and motion graphics that keep retention high without feeling overproduced.</p></div></li>
+          <li class="reveal" data-peek="assets/services/peek/1478737270239-2f02b77fc618.webp|assets/services/peek/1590602847861-f357a9332bbc.webp|assets/services/peek/1505740420928-5e560c06d30e.webp"><span class="n">05</span><div><h3>Captions &amp; sound</h3><p>Burned-in captions for sound-off viewing, plus music and sound design that fit each platform.</p></div></li>
+          <li class="reveal" data-peek="assets/services/peek/1611162616475-46b635cb6868.webp|assets/services/peek/1634942537034-2531766767d1.webp|assets/services/peek/1611926653458-09294b3142bf.webp"><span class="n">06</span><div><h3>Platform cutdowns</h3><p>One shoot cut into formats for Instagram Reels, YouTube Shorts and paid placements.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- IMAGES + PRINCIPLE -->
+  <section class="px-5 md:px-9 pb-20 md:pb-28">
+    <div class="max-w-[1400px] mx-auto bento">
+      <figure class="b-a reveal"><img src="assets/services/reels-2.webp" alt="Social media app icon on a bright pink background" width="1100" height="825" loading="lazy" decoding="async"></figure>
+      <div class="principle reveal">
+        <span class="kick" style="color:inherit;opacity:.7">Our principle</span>
+        <div><blockquote>“The first frame is the ad.”</blockquote><p class="mt-4 opacity-80 leading-relaxed">If it doesn’t earn the second, nothing after it gets seen.</p></div>
+      </div>
+      <figure class="reveal"><img src="assets/services/reels-3.webp" alt="Content studio with a camera on a tripod in front of editing monitors" width="1100" height="734" loading="lazy" decoding="async"></figure>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="px-5 md:px-9 py-20 md:py-28 border-t" style="border-color:var(--line)">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div><p class="kick reveal">How it works</p>
+        <h2 class="reveal display mt-4 text-4xl md:text-6xl font-bold tracking-tight">Four steps, <em class="soul-serif">no surprises.</em></h2></div>
+        <p class="reveal max-w-sm text-sm leading-relaxed" style="color:var(--soft)">You see the work at every stage and sign off before we move on.</p>
+      </div>
+      <div class="relative">
+        <span class="rail" aria-hidden="true"><i></i></span>
+        <ol class="steps js-steps">
+        <li class="step reveal"><span class="dot">1</span><h3>Hook</h3><p>Research your audience and what’s working in your category, then write the hooks.</p></li>
+        <li class="step reveal"><span class="dot">2</span><h3>Shoot</h3><p>Plan the shot list, cast creators if needed and capture everything in one efficient session.</p></li>
+        <li class="step reveal"><span class="dot">3</span><h3>Cut</h3><p>Edit for retention: pacing, captions, motion and sound, with versions for each platform.</p></li>
+        <li class="step reveal"><span class="dot">4</span><h3>Learn</h3><p>Review watch-time and results, keep what works and feed it into the next batch.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIT -->
+  <section class="px-5 md:px-9 pb-20 md:pb-28">
+    <div class="max-w-[1400px] mx-auto">
+      <p class="kick reveal">Built for</p>
+      <h2 class="reveal display mt-4 mb-10 text-4xl md:text-6xl font-bold tracking-tight">Is this <em class="soul-serif">right for you?</em></h2>
+      <div class="fit reveal">
+        <div><h3>Brands new to short-form</h3><p>Know you need reels but don’t have the team or the playbook to make them weekly.</p></div>
+        <div><h3>Accounts that have plateaued</h3><p>Posting consistently but views and engagement have stopped growing.</p></div>
+        <div><h3>Paid social teams</h3><p>Need a steady supply of fresh creative to beat ad fatigue.</p></div>
+        <div><h3>Founder-led brands</h3><p>Want the founder on camera without it feeling like a corporate video.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-5 md:px-9 pb-20 md:pb-28">
+    <div class="max-w-[1400px] mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-20">
+      <div><p class="kick reveal">Questions</p>
+      <h2 class="reveal display mt-4 text-4xl md:text-5xl font-bold tracking-tight">Frequently <em class="soul-serif">asked.</em></h2></div>
+      <div class="faq">
+        <details class="reveal"><summary>Do you shoot on location?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Yes. We shoot on location or in a studio depending on the concept, and plan every shoot so one session produces several videos.</p></details>
+        <details class="reveal"><summary>Can you edit footage we already have?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Yes. Send us your raw footage and we’ll cut it into reels, add captions and motion, and suggest what to capture next time.</p></details>
+        <details class="reveal"><summary>How many reels do we get each month?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Volume depends on the scope we agree together. We would rather ship fewer videos that perform than many that don’t, and we set the cadence with you upfront.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT SERVICE -->
+  <section class="px-5 md:px-9 pb-14">
+    <div class="max-w-[1400px] mx-auto">
+      <a href="campaign-design.html" class="next reveal" data-c="link">
+        <img src="assets/services/campaign-design-1.webp" alt="" width="1600" height="1067" loading="lazy" decoding="async">
+        <div class="self-end p-7 md:p-12 flex items-end justify-between gap-6">
+          <div><span class="text-xs uppercase tracking-[0.2em] opacity-80">Next service · 03</span>
+          <span class="block display text-3xl md:text-6xl font-bold mt-2 tracking-tight">Poster &amp; Campaign Design</span></div>
+          <span class="go" aria-hidden="true">↗</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-5 md:px-9 pb-20">
+    <div class="max-w-[1400px] mx-auto cta reveal">
+      <h2 class="display text-4xl md:text-7xl font-bold tracking-tight leading-[0.98] max-w-4xl">Let’s talk about your video — <em class="soul-serif" style="color:inherit">properly.</em></h2>
+      <p class="mt-5 max-w-xl opacity-80 leading-relaxed">Book a free discovery call. We’ll look at where you are, where you want to be and whether we’re the right team to get you there.</p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="contact.html?service=reels" class="btn btn-primary" data-c="link">Book a Discovery Call <span class="arr" aria-hidden="true">↗</span></a>
+        <a href="tel:+918974332863" class="btn btn-ghost" data-c="link">Call +91&nbsp;89743&nbsp;32863</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-5 md:px-9 py-14 border-t" style="border-color:var(--line)">
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-7">
+      <p class="max-w-md text-base md:text-lg leading-relaxed">
+        <span class="display font-bold">WebGrow360.</span> A creative agency binding brand, story and data into branding, advertising and marketing that earns attention — and converts it.
+      </p>
+      <div class="text-sm md:text-right" style="color:var(--soft)">
+        <a href="mailto:Connect@team.webgrow360.online" class="block text-base md:text-lg display" style="color:var(--ink)" data-c="link">Connect@team.webgrow360.online</a>
+        <a href="tel:+918974332863" class="block text-base md:text-lg display mt-1" style="color:var(--ink)" data-c="link">+91 89743 32863</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var lenis=null;
+  try{ if(window.Lenis){ lenis=new Lenis({duration:1.1, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true, smoothTouch:false}); requestAnimationFrame(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }); } }catch(e){}
+  document.documentElement.classList.add('ready');
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0.08, rootMargin:'0px 0px -5% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  // cursor
+  var cursor=document.getElementById('cursor');
+  if(window.matchMedia('(min-width:1024px)').matches){
+    var mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+    addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+    (function loop(){ cx+=(mx-cx)*0.18; cy+=(my-cy)*0.18; cursor.style.left=cx+'px'; cursor.style.top=cy+'px'; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover',function(e){ var t=e.target.closest('[data-c]'); cursor.classList.remove('link'); if(t){ cursor.classList.add(t.getAttribute('data-c')); } });
+  }
+
+  // menu
+  var menu=document.getElementById('menu');
+  function closeMenu(){ menu.classList.remove('open'); if(lenis)lenis.start(); }
+  document.getElementById('menu-btn').addEventListener('click',function(){ menu.classList.add('open'); if(lenis)lenis.stop(); });
+  document.getElementById('menu-close').addEventListener('click',closeMenu);
+  document.querySelectorAll('.menu-link').forEach(function(l){ l.addEventListener('click',closeMenu); });
+
+  // header: solid bar once scrolled, hide on scroll down / show on scroll up (as on realestate.webgrow360.online)
+  (function(){
+    var head=document.getElementById('site-head'), mnu=document.getElementById('menu'), last=0;
+    function onScroll(){ var y=window.scrollY||0;
+      head.classList.toggle('scrolled', y>24);
+      head.classList.toggle('hide', y>last && y>320 && !mnu.classList.contains('open'));
+      last=y; }
+    addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  })();
+  addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+
+  // soul
+  document.getElementById('soul-btn').addEventListener('click',function(){
+    var on=document.body.classList.toggle('soul');
+    var tc=document.querySelector('meta[name=theme-color]'); if(tc)tc.setAttribute('content',on?'#070611':'#f3f2ec');
+  });
+
+  // ===== service page interactions =====
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // hero clip reveal
+  var fig=document.querySelector('.hero-fig'); if(fig) requestAnimationFrame(function(){ fig.classList.add('in'); });
+  // gentle hero parallax
+  var par=document.querySelector('.js-parallax');
+  if(par && !reduce){ var ticking=false; addEventListener('scroll',function(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ var y=Math.min(window.scrollY,900); par.style.transform='translate3d(0,'+(-y*0.06)+'px,0)'; ticking=false; }); },{passive:true}); }
+  // deliverable rows: a floating preview follows the cursor and cycles through images of that deliverable
+  (function(){
+    var peek=document.getElementById('peek'); if(!peek) return;
+    var wide=window.matchMedia('(min-width:1024px) and (hover:hover)'), imgs=[], i=0, timer=null, on=false;
+    document.querySelectorAll('.dl li[data-peek]').forEach(function(row){
+      var urls=row.getAttribute('data-peek').split('|');
+      row.addEventListener('mouseenter',function(e){
+        if(!wide.matches) return;
+        peek.innerHTML=''; imgs=[]; i=0;
+        urls.forEach(function(u,k){ var im=new Image(); im.src=u; im.alt=''; im.decoding='async'; if(k===0) im.className='on'; peek.appendChild(im); imgs.push(im); });
+        peek.style.left=e.clientX+'px'; peek.style.top=e.clientY+'px'; on=true; peek.classList.add('on');
+        clearInterval(timer); if(!reduce) timer=setInterval(function(){ imgs[i].classList.remove('on'); i=(i+1)%imgs.length; imgs[i].classList.add('on'); },850);
+      });
+      row.addEventListener('mouseleave',function(){ on=false; peek.classList.remove('on'); clearInterval(timer); });
+    });
+    addEventListener('mousemove',function(e){ if(on){ peek.style.left=e.clientX+'px'; peek.style.top=e.clientY+'px'; } },{passive:true});
+    addEventListener('scroll',function(){ if(on){ on=false; peek.classList.remove('on'); clearInterval(timer); } },{passive:true});
+  })();
+  // cursor spotlight on deliverable rows
+  document.querySelectorAll('.js-spot li').forEach(function(li){ li.addEventListener('pointermove',function(e){ var r=li.getBoundingClientRect(); li.style.setProperty('--mx',(e.clientX-r.left)+'px'); li.style.setProperty('--my',(e.clientY-r.top)+'px'); }); });
+  // process: light up steps and fill the rail as they scroll into view
+  var steps=[].slice.call(document.querySelectorAll('.js-steps .step')), rail=document.querySelector('.rail');
+  if('IntersectionObserver' in window && steps.length){
+    var so=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('on'); });
+      var lit=steps.filter(function(s){ return s.classList.contains('on'); }).length; if(rail) rail.style.setProperty('--p', Math.max(0,(lit-1)/(steps.length-1))); },{rootMargin:'0px 0px -35% 0px'});
+    steps.forEach(function(s){ so.observe(s); });
+  } else { steps.forEach(function(s){ s.classList.add('on'); }); if(rail) rail.style.setProperty('--p',1); }
+
+})();
+</script>
+</body>
+</html>

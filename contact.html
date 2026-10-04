@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#f3f2ec" />
+
+<title>Contact WebGrow360 | Start a Project or Book a Free Discovery Call</title>
+<meta name="description" content="Tell WebGrow360 about your brand. Share your name, contact details and the service you need — brand identity, reels, campaign design or performance marketing — and we’ll set up a free discovery call." />
+<link rel="canonical" href="https://webgrow360.online/contact" />
+<meta name="robots" content="index, follow" />
+
+<link rel="icon" type="image/webp" href="assets/webgrow360-mark.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@600&family=Azeret+Mono:wght@400&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: {
+    display:['Space Grotesk','sans-serif'], body:['Inter','sans-serif'], serif:['Cormorant Garamond','serif'], mono:['JetBrains Mono','monospace']
+  } } } };
+</script>
+
+
+<style>
+  :root{
+    --bg:#f3f2ec; --bg2:#eae9e1; --ink:#141318; --soft:#5d5c54;
+    --accent:#7c3aed; --accent2:#3b2a8c; --blue:#2f7fc4; --lime:#d8f263;
+    --card:#141318; --card-ink:#f3f2ec; --line:rgba(20,19,24,.12);
+  }
+  body.soul{
+    --bg:#070611; --bg2:#0e0c1c; --ink:#f1eefc; --soft:rgba(241,238,252,.6);
+    --accent:#a78bfa; --accent2:#8b5cf6; --blue:#6db4ff; --lime:#d8f263;
+    --card:#0e0c1c; --card-ink:#f1eefc; --line:rgba(241,238,252,.14);
+  }
+  html.lenis,html.lenis body{height:auto;}
+  .lenis.lenis-smooth{scroll-behavior:auto !important;}
+  *{ -ms-overflow-style:none; scrollbar-width:none; }
+  ::-webkit-scrollbar{ display:none; }
+  html{ overflow-x:clip; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; overflow-x:clip; max-width:100vw;
+    transition:background .7s cubic-bezier(.65,0,.35,1), color .7s cubic-bezier(.65,0,.35,1); }
+  @media(min-width:1024px){ body{cursor:none;} }
+  h1,h2,h3,.display{ font-family:'Space Grotesk',sans-serif; }
+  .soul-serif{ font-family:'Cormorant Garamond',serif; }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+
+  .reveal{ opacity:1; transform:none; }
+  html.ready .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  html.ready .reveal.in{ opacity:1; transform:none; }
+
+  #cursor{ position:fixed; left:0; top:0; width:92px; height:92px; transform:translate(-50%,-50%); pointer-events:none; z-index:9999; mix-blend-mode:difference; }
+  #cursor svg{ width:100%; height:100%; animation:spin 9s linear infinite; transition:scale .4s cubic-bezier(.16,1,.3,1); }
+  #cursor text{ fill:#fff; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:8.4px; letter-spacing:1.4px; text-transform:uppercase; }
+  #cur-dot{ position:absolute; left:50%; top:50%; width:7px; height:7px; border-radius:50%; background:#fff; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+  #cursor.link svg{ scale:.6; } #cursor.link #cur-dot{ width:16px; height:16px; }
+  @keyframes spin{ to{ rotate:360deg; } }
+  @media(max-width:1023px){ #cursor{ display:none; } }
+
+  .pill{ background:var(--accent); color:#fff; border-radius:999px; padding:.04em .36em .2em; display:inline-block; line-height:1.06; }
+  .grain{ position:fixed; inset:0; pointer-events:none; z-index:9998; opacity:.03;
+    background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)"/%3E%3C/svg%3E'); }
+
+  #soul-btn{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; flex:none; border:1px solid var(--line); background:transparent; color:var(--ink); font-size:18px; line-height:1; transition:transform .5s cubic-bezier(.16,1,.3,1), background .4s, color .4s; }
+  #soul-btn:hover{ transform:rotate(180deg); }
+  body.soul #soul-btn{ background:var(--lime); color:#141318; border-color:transparent; }
+
+  /* ===== Header — mirrors realestate.webgrow360.online ===== */
+  #site-head{ position:fixed; top:0; left:0; right:0; z-index:58; padding:14px clamp(12px,2.2vw,32px) 0; transition:transform .46s cubic-bezier(.32,.72,0,1); }
+  #site-head.hide{ transform:translateY(-120%); }
+  /* glass pill, tinted with --ink so it always contrasts the page (dark glass on light, light glass in soul mode) */
+  #site-head .bar{ max-width:96rem; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; border-radius:999px; padding:8px 8px 8px 22px;
+    color:var(--bg); background-color:color-mix(in oklab, var(--ink) 80%, transparent);
+    background-image:linear-gradient(180deg, color-mix(in oklab, var(--bg) 12%, transparent), transparent 55%);
+    backdrop-filter:blur(20px) saturate(170%); -webkit-backdrop-filter:blur(20px) saturate(170%);
+    border:1px solid color-mix(in oklab, var(--bg) 18%, transparent);
+    box-shadow:inset 0 1px 0 color-mix(in oklab, var(--bg) 22%, transparent), 0 14px 36px -14px rgba(0,0,0,.35);
+    transition:background-color .5s cubic-bezier(.32,.72,0,1), box-shadow .5s cubic-bezier(.32,.72,0,1); }
+  #site-head.scrolled .bar{ background-color:color-mix(in oklab, var(--ink) 86%, transparent); }
+  .wg-logo{ display:inline-flex; align-items:center; gap:.65rem; flex:none; font-size:16px; color:inherit; transition:opacity .3s; }
+  .wg-logo:hover{ opacity:.7; }
+  .wg-logo img{ width:2.05em; height:2.05em; object-fit:contain; flex:none; }
+  .wg-word{ display:flex; flex-direction:column; line-height:1; }
+  .wg-word b{ font-family:'Instrument Sans','Inter',sans-serif; font-weight:600; letter-spacing:.11em; }
+  .wg-word small{ margin-top:.34em; font-family:'Azeret Mono',monospace; font-size:.58em; letter-spacing:.36em; opacity:.7; }
+  .nav-links{ display:none; align-items:center; gap:4px; }
+  .nav-link{ position:relative; padding:10px 16px; border-radius:999px; font-size:15px; color:color-mix(in oklab, var(--bg) 68%, transparent); transition:color .3s, background .3s; }
+  .nav-link:hover,.nav-link.active{ color:var(--bg); }
+  .nav-link:hover{ background:color-mix(in oklab, var(--bg) 10%, transparent); }
+  .nav-link::after{ content:''; position:absolute; left:50%; top:50%; width:4px; height:4px; border-radius:50%; background:var(--accent); transform:translate(-50%,.85rem); opacity:0; transition:opacity .3s; }
+  .nav-link.active::after{ opacity:1; }
+  .nav-cta{ display:none; padding:10px 20px; border-radius:999px; font-size:15px; font-weight:500; background:var(--accent); color:#fff; white-space:nowrap; transition:background .5s; }
+  @media(min-width:1024px){ .nav-links{ display:flex; } .nav-cta{ display:inline-block; } }
+  #site-head #menu-btn{ background:var(--bg); color:var(--ink); }
+  #site-head #soul-btn{ color:var(--bg); border-color:color-mix(in oklab, var(--bg) 25%, transparent); }
+  body.soul #site-head #soul-btn{ color:#141318; }
+  body.soul .nav-cta{ color:#141318; }
+
+  #menu-btn{ display:flex; align-items:center; gap:9px; font-size:13px; font-weight:600; padding:10px 18px; border-radius:999px; background:var(--ink); color:var(--bg); }
+  #menu-btn .bars{ width:16px; height:10px; position:relative; }
+  #menu-btn .bars span{ position:absolute; left:0; width:16px; height:1.5px; background:currentColor; }
+  #menu-btn .bars span:nth-child(1){ top:0; } #menu-btn .bars span:nth-child(2){ bottom:0; }
+  #menu{ position:fixed; inset:0; z-index:60; background:var(--ink); color:var(--bg); display:flex; flex-direction:column; justify-content:center; padding:0 6vw;
+    clip-path:circle(0% at 92% 5%); transition:clip-path .7s cubic-bezier(.76,0,.24,1); pointer-events:none; }
+  #menu.open{ clip-path:circle(150% at 92% 5%); pointer-events:auto; }
+  .menu-link{ display:block; font-family:'Space Grotesk'; font-weight:600; letter-spacing:-.02em; line-height:1.08; font-size:clamp(2.6rem,11vw,7rem); opacity:.55; transition:opacity .3s, transform .5s cubic-bezier(.16,1,.3,1); }
+  .menu-link:hover{ opacity:1; transform:translateX(18px); }
+  .menu-idx{ font-size:.85rem; vertical-align:super; opacity:.5; margin-left:.4rem; font-family:'Inter'; }
+
+  /* ===== Phone & tablet optimisation ===== */
+  @media(max-width:640px){
+    /* Menu overlay scrolls + nav stays compact */
+    #menu{ overflow-y:auto; justify-content:flex-start; padding-top:6rem; padding-bottom:3rem; }
+    .menu-link{ font-size:clamp(2.1rem,12vw,3.4rem); }
+    .wg-logo{ font-size:14px; }
+    #menu-btn{ padding:9px 14px; }
+  }
+
+  /* ===== Service pages ===== */
+  body{ --svc:var(--card); --svc-on:var(--card-ink); --chip:var(--lime); --chip-on:#141318; }
+  body.soul{ --svc-on:var(--card-ink); }
+  html{ scroll-padding-top:110px; }
+  section[id]{ scroll-margin-top:110px; }
+  .skip{ position:fixed; left:12px; top:-60px; z-index:100; padding:10px 16px; border-radius:999px; background:var(--ink); color:var(--bg); font-size:14px; transition:top .2s; }
+  .skip:focus{ top:12px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:12px; }
+  h1,h2,h3{ text-wrap:balance; } p{ text-wrap:pretty; }
+  .kick{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+  .crumbs{ display:flex; gap:.5rem; align-items:center; font-size:13px; color:var(--soft); margin-bottom:1.6rem; }
+  .crumbs a{ text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--line); transition:color .25s; }
+  .crumbs a:hover{ color:var(--ink); }
+  h1 em, h2 em{ font-style:italic; font-weight:500; color:var(--accent); }
+  .btn{ display:inline-flex; align-items:center; gap:.6rem; min-height:48px; padding:0 1.5rem; border-radius:999px; font-weight:600; font-size:15px;
+    transition:transform .35s cubic-bezier(.16,1,.3,1), background-color .3s, color .3s, box-shadow .3s; touch-action:manipulation; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--ink); color:var(--bg); box-shadow:0 10px 26px -14px rgba(0,0,0,.5); }
+  .btn-primary:hover{ background:var(--accent); color:#fff; }
+  .btn-ghost{ border:1px solid var(--line); }
+  .btn-ghost:hover{ border-color:var(--ink); }
+  .btn .arr{ transition:transform .35s cubic-bezier(.16,1,.3,1); }
+  .btn:hover .arr{ transform:translate(2px,-2px); }
+
+  /* hero image: clip reveal + gentle parallax */
+  .hero-fig{ position:relative; border-radius:28px; overflow:hidden; aspect-ratio:4/5; background:var(--bg2); }
+  .hero-fig img{ width:100%; height:112%; object-fit:cover; display:block; will-change:transform; }
+  html.ready .hero-fig{ clip-path:inset(12% 12% 12% 12% round 28px); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); }
+  html.ready .hero-fig.in{ clip-path:inset(0 0 0 0 round 28px); }
+  .hero-fig figcaption{ position:absolute; left:14px; right:14px; bottom:14px; padding:12px 16px; border-radius:16px; font-size:13px; color:#fff;
+    background:rgba(20,19,24,.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,.18); }
+  .svc-badge{ display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .9rem; border-radius:999px; background:var(--svc); color:var(--svc-on); font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+  .svc-badge i{ width:7px; height:7px; border-radius:50%; background:var(--chip); }
+
+  /* marquee */
+  .marquee{ overflow:hidden; border-block:1px solid var(--line); padding:1.1rem 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+  .marquee .track{ display:flex; width:max-content; gap:2.6rem; animation:mq 38s linear infinite; }
+  .marquee:hover .track{ animation-play-state:paused; }
+  .marquee span{ font-family:'Space Grotesk'; font-size:clamp(1.4rem,3vw,2.4rem); font-weight:600; letter-spacing:-.02em; white-space:nowrap; display:inline-flex; align-items:center; gap:2.6rem; }
+  .marquee span::after{ content:'✦'; font-size:.55em; color:var(--accent); }
+  @keyframes mq{ to{ transform:translateX(-50%); } }
+
+  /* deliverables list with cursor spotlight */
+  .dl li{ position:relative; display:grid; grid-template-columns:3.2rem 1fr; gap:1rem; padding:1.6rem 1.2rem; border-top:1px solid var(--line); border-radius:18px; isolation:isolate; }
+  .dl li:last-child{ border-bottom:1px solid var(--line); }
+  .dl li::before{ content:''; position:absolute; inset:0; z-index:-1; border-radius:18px; opacity:0; transition:opacity .35s;
+    background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%), color-mix(in oklab, var(--accent) 12%, transparent), transparent 70%); }
+  .dl li:hover::before{ opacity:1; }
+  .dl .n{ font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); padding-top:.35rem; font-variant-numeric:tabular-nums; }
+  .dl h3{ font-size:clamp(1.25rem,2vw,1.6rem); font-weight:600; letter-spacing:-.01em; }
+  .dl p{ margin-top:.35rem; color:var(--soft); max-width:46ch; line-height:1.6; }
+
+  /* bento */
+  .bento{ display:grid; gap:14px; grid-template-columns:1fr; }
+  @media(min-width:900px){ .bento{ grid-template-columns:1.25fr .9fr; grid-template-rows:auto auto; } .bento .b-a{ grid-row:span 2; } }
+  .bento figure{ position:relative; border-radius:24px; overflow:hidden; background:var(--bg2); min-height:260px; }
+  .bento img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform 1.1s cubic-bezier(.16,1,.3,1); }
+  .bento figure:hover img{ transform:scale(1.045); }
+  .principle{ border-radius:24px; padding:clamp(1.6rem,3vw,2.6rem); background:var(--svc); color:var(--svc-on); display:flex; flex-direction:column; justify-content:space-between; gap:2rem; min-height:260px; border:1px solid var(--line); }
+  .principle blockquote{ font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.4vw,2.9rem); line-height:1.08; font-weight:500; }
+
+  /* process with progress rail */
+  .steps{ position:relative; display:grid; gap:1.4rem; grid-template-columns:1fr; counter-reset:s; }
+  @media(min-width:900px){ .steps{ grid-template-columns:repeat(4,1fr); } }
+  .rail{ display:none; }
+  @media(min-width:900px){ .rail{ display:block; position:absolute; left:24px; right:calc((100% - 4.2rem) / 4 - 24px); top:23px; height:2px; background:var(--line); }
+    .rail i{ position:absolute; inset:0; transform-origin:left; transform:scaleX(var(--p,0)); background:var(--accent); transition:transform .6s cubic-bezier(.16,1,.3,1); } }
+  .step .dot{ position:relative; width:48px; height:48px; border-radius:50%; display:grid; place-items:center; font-weight:600; font-family:'Space Grotesk';
+    background:var(--bg); border:1.5px solid var(--line); transition:background-color .4s, color .4s, border-color .4s; font-variant-numeric:tabular-nums; }
+  .step.on .dot{ background:var(--svc); color:var(--svc-on); border-color:var(--svc); }
+  .step h3{ margin-top:1.1rem; font-size:1.35rem; font-weight:600; }
+  .step p{ margin-top:.4rem; color:var(--soft); line-height:1.6; }
+
+  /* fit */
+  .fit{ display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:24px; overflow:hidden; grid-template-columns:1fr; }
+  @media(min-width:760px){ .fit{ grid-template-columns:1fr 1fr; } }
+  .fit div{ background:var(--bg); padding:1.7rem 1.6rem; transition:background-color .3s; }
+  .fit div:hover{ background:var(--bg2); }
+  .fit h3{ font-size:1.2rem; font-weight:600; } .fit p{ margin-top:.4rem; color:var(--soft); line-height:1.6; }
+
+  /* faq */
+  .faq details{ border-top:1px solid var(--line); }
+  .faq details:last-child{ border-bottom:1px solid var(--line); }
+  .faq summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1.2rem; padding:1.4rem .2rem; font-family:'Space Grotesk'; font-size:clamp(1.1rem,1.8vw,1.35rem); font-weight:600; min-height:48px; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq .pm{ flex:none; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); position:relative; transition:transform .4s cubic-bezier(.16,1,.3,1), background-color .3s; }
+  .faq .pm::before,.faq .pm::after{ content:''; position:absolute; left:50%; top:50%; width:12px; height:1.5px; background:currentColor; transform:translate(-50%,-50%); }
+  .faq .pm::after{ transform:translate(-50%,-50%) rotate(90deg); transition:transform .4s; }
+  .faq details[open] .pm{ background:var(--svc); color:var(--svc-on); border-color:var(--svc); }
+  .faq details[open] .pm::after{ transform:translate(-50%,-50%) rotate(0deg); }
+  .faq .ans{ padding:0 .2rem 1.5rem; color:var(--soft); line-height:1.7; max-width:68ch; }
+
+  /* next service */
+  .next{ position:relative; display:grid; border-radius:28px; overflow:hidden; min-height:340px; isolation:isolate; color:#fff; }
+  .next img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; transition:transform 1.2s cubic-bezier(.16,1,.3,1); }
+  .next::after{ content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, rgba(10,9,14,.15), rgba(10,9,14,.78)); }
+  .next:hover img{ transform:scale(1.05); }
+  .next .go{ width:64px; height:64px; border-radius:50%; display:grid; place-items:center; background:#fff; color:#141318; font-size:22px; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+  .next:hover .go{ transform:rotate(45deg); }
+
+  /* closing CTA */
+  .cta{ border-radius:32px; background:var(--svc); color:var(--svc-on); padding:clamp(2.2rem,6vw,5rem); border:1px solid var(--line); }
+  .cta .btn-primary{ background:var(--chip); color:var(--chip-on); }
+  .cta .btn-primary:hover{ background:var(--ink); color:var(--bg); }
+  .cta .btn-ghost{ border-color:currentColor; }
+
+
+
+  /* ===== Contact page ===== */
+  .c-card{ border-radius:28px; background:var(--bg); border:1px solid var(--line); box-shadow:0 30px 70px -40px rgba(0,0,0,.35); padding:clamp(1.4rem,3.4vw,2.8rem); }
+  body.soul .c-card{ background:var(--bg2); }
+  .field{ display:grid; gap:.45rem; align-content:start; }
+  .field label{ font-size:14px; font-weight:600; }
+  .field label .req{ color:var(--accent); margin-left:2px; }
+  .field .hint{ font-size:13px; color:var(--soft); }
+  .inp{ width:100%; height:54px; min-height:54px; padding:.85rem 1rem; border-radius:14px; border:1.5px solid var(--line); background-color:var(--bg2); color:var(--ink); font-size:16px;
+    transition:border-color .2s, box-shadow .2s, background-color .2s; }
+  body.soul .inp{ background-color:var(--bg); }
+  .inp::placeholder{ color:color-mix(in oklab, var(--soft) 80%, transparent); }
+  .inp:hover{ border-color:color-mix(in oklab, var(--ink) 30%, transparent); }
+  .inp:focus-visible{ outline:none; border-color:var(--accent); box-shadow:0 0 0 4px color-mix(in oklab, var(--accent) 18%, transparent); background-color:var(--bg); }
+  select.inp{ appearance:none; -webkit-appearance:none; padding-right:2.8rem; cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 1rem center; }
+  select.inp option{ background:var(--bg); color:var(--ink); }
+  textarea.inp{ height:auto; min-height:150px; resize:vertical; line-height:1.55; }
+  .field.bad .inp{ border-color:#d13b3b; }
+  .err{ display:none; font-size:13px; color:#b42318; }
+  body.soul .err{ color:#ff8a80; }
+  .field.bad .err{ display:block; }
+  .hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+  .send{ display:inline-flex; align-items:center; justify-content:center; gap:.6rem; min-height:56px; padding:0 2rem; border-radius:999px; font-weight:600; font-size:16px;
+    background:var(--ink); color:var(--bg); transition:background-color .3s, color .3s, transform .35s cubic-bezier(.16,1,.3,1), opacity .2s; touch-action:manipulation; }
+  .send:hover{ background:var(--accent); color:#fff; transform:translateY(-2px); }
+  .send:disabled{ opacity:.6; cursor:progress; transform:none; }
+  .spin{ width:16px; height:16px; border-radius:50%; border:2px solid currentColor; border-right-color:transparent; display:none; animation:spin .8s linear infinite; }
+  .send.busy .spin{ display:inline-block; }
+  .status{ font-size:14px; line-height:1.5; }
+  .status.error{ padding:1rem 1.1rem; border-radius:14px; background:color-mix(in oklab, #d13b3b 9%, transparent); border:1px solid color-mix(in oklab, #d13b3b 30%, transparent); }
+  .status.error a{ text-decoration:underline; text-underline-offset:3px; font-weight:600; }
+  .done{ display:none; text-align:center; padding:clamp(2rem,6vw,4rem) 1rem; }
+  .c-card.sent form{ display:none; } .c-card.sent .done{ display:block; }
+  .tick-big{ width:72px; height:72px; margin:0 auto 1.4rem; border-radius:50%; display:grid; place-items:center; background:var(--lime); color:#141318; font-size:32px; font-weight:700; }
+  .c-list{ display:grid; gap:1rem; }
+  .c-list a, .c-list div{ display:flex; align-items:center; gap:1rem; padding:1rem 1.1rem; border-radius:18px; border:1px solid var(--line); transition:border-color .3s, background-color .3s; }
+  .c-list a:hover{ border-color:var(--ink); background:color-mix(in oklab, var(--ink) 3%, transparent); }
+  .c-ico{ flex:none; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--svc); color:var(--chip); }
+  .c-ico svg{ width:20px; height:20px; }
+  .c-list small{ display:block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+  .c-list b{ font-weight:600; font-size:clamp(1rem,1.3vw,1.1rem); word-break:break-word; }
+  .next-steps{ counter-reset:n; display:grid; gap:1rem; }
+  .next-steps li{ counter-increment:n; display:grid; grid-template-columns:2.2rem 1fr; gap:.8rem; align-items:start; color:var(--soft); line-height:1.55; }
+  .next-steps li::before{ content:counter(n,decimal-leading-zero); font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); padding-top:.15rem; }
+  .next-steps b{ color:var(--ink); font-weight:600; }
+  @media (prefers-reduced-motion: reduce){ .spin{ animation-duration:2s; } .send{ transition:none; } }
+
+  /* deliverable hover preview — same floating peek as the home page's industry list */
+  #peek{ position:fixed; top:0; left:0; width:300px; height:215px; z-index:55; border-radius:16px; overflow:hidden; pointer-events:none; background:var(--bg2);
+    opacity:0; transform:translate(-50%,-50%) scale(.84) rotate(-2deg); transition:opacity .35s ease, transform .45s cubic-bezier(.16,1,.3,1); box-shadow:0 30px 60px -22px rgba(0,0,0,.5); }
+  #peek.on{ opacity:1; transform:translate(-50%,-50%) scale(1) rotate(-2deg); }
+  #peek img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .4s; }
+  #peek img.on{ opacity:1; }
+  .dl li[data-peek]{ cursor:default; }
+  @media(max-width:1023px), (hover:none){ #peek{ display:none; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .marquee .track{ animation:none; }
+    html.ready .reveal, html.ready .hero-fig{ opacity:1 !important; transform:none !important; clip-path:none !important; transition:none !important; }
+    .hero-fig img{ transform:none !important; }
+    .bento img, .next img, .btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<div class="grain"></div>
+<div id="cursor"><span id="cur-dot"></span>
+  <svg viewBox="0 0 96 96"><defs><path id="cpath" d="M48,48 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"></path></defs>
+  <text><textPath href="#cpath" startOffset="0">BRANDING • ADVERTISING • MARKETING • </textPath></text></svg>
+</div>
+
+<!-- NAV -->
+<header id="site-head">
+  <div class="bar">
+    <a href="index.html" id="logo" class="wg-logo" data-c="link" aria-label="WEBGROW360 ONLINE — home">
+      <img src="assets/webgrow360-mark.webp" alt="" aria-hidden="true">
+      <span class="wg-word"><b>WEBGROW360</b> <small>ONLINE</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#industries" class="nav-link" data-c="link">Our Work</a>
+      <a href="index.html#services" class="nav-link" data-c="link">Services</a>
+      <a href="index.html#solutions" class="nav-link" data-c="link">Solutions</a>
+      <a href="about.html" class="nav-link" data-c="link">About Us</a>
+      <a href="contact.html" class="nav-link active" data-c="link" aria-current="page">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="nav-cta" data-c="link">Start a project</a>
+      <button id="soul-btn" data-c="link" aria-label="Toggle soul mode" title="Soul mode">☯</button>
+      <button id="menu-btn" data-c="link" aria-label="Open menu"><span class="bars"><span></span><span></span></span>Menu</button>
+    </div>
+  </div>
+</header>
+
+<div id="menu">
+  <button id="menu-close" class="absolute top-6 right-6 md:right-9 text-sm uppercase tracking-[0.2em]" data-c="link">Close ✕</button>
+  <nav class="flex flex-col gap-1">
+    <a href="index.html#industries" class="menu-link" data-c="link">Our Work<span class="menu-idx">01</span></a>
+    <a href="index.html#services" class="menu-link" data-c="link">Services<span class="menu-idx">02</span></a>
+    <a href="index.html#solutions" class="menu-link" data-c="link">Solutions<span class="menu-idx">03</span></a>
+    <a href="about.html" class="menu-link" data-c="link">About Us<span class="menu-idx">04</span></a>
+    <a href="contact.html" class="menu-link" data-c="link">Contact<span class="menu-idx">05</span></a>
+  </nav>
+  <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
+    <a href="contact.html" class="inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-sm self-start" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
+    <div class="text-sm opacity-70">
+      <a href="mailto:Connect@team.webgrow360.online" class="block" data-c="link">Connect@team.webgrow360.online</a>
+      <a href="tel:+918974332863" class="block mt-1" data-c="link">+91 89743 32863</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="px-5 md:px-9 pt-32 md:pt-40 pb-20 md:pb-28">
+    <div class="max-w-[1400px] mx-auto grid lg:grid-cols-[.9fr_1.1fr] gap-12 lg:gap-16 items-start">
+
+      <!-- left: intro, direct contact, what happens next -->
+      <div class="lg:sticky lg:top-32">
+        <p class="kick reveal">Contact</p>
+        <h1 class="reveal display mt-5 text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[0.95]">Let’s grow your brand <em class="soul-serif">together.</em></h1>
+        <p class="reveal mt-7 max-w-xl text-base md:text-lg leading-relaxed" style="color:var(--soft)">Tell us a little about your business and what you need. We’ll get back to you to set up a free discovery call — no pressure, no hard sell.</p>
+
+        <div class="c-list reveal mt-10">
+          <a href="mailto:Connect@team.webgrow360.online" data-c="link"><span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span><small>Email</small><b>Connect@team.webgrow360.online</b></span></a>
+          <a href="tel:+918974332863" data-c="link"><span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Call</small><b>+91&nbsp;89743&nbsp;32863</b></span></a>
+          <a href="https://wa.me/918974332863" target="_blank" rel="noopener noreferrer" data-c="link"><span class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35ZM12.05 21.5h-.01a9.43 9.43 0 0 1-4.81-1.32l-.35-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44 2.52 0 4.9.99 6.68 2.77a9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.43-9.44 9.43Zm8.03-17.47A11.3 11.3 0 0 0 12.04.7C5.78.7.68 5.8.68 12.07c0 2 .52 3.96 1.52 5.68L.6 23.6l6-1.57a11.34 11.34 0 0 0 5.43 1.38h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.03-1.18-5.89-3.33-8.03Z"/></svg></span><span><small>WhatsApp</small><b>Chat with us on WhatsApp</b></span></a>
+          <div><span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><span><small>Based in</small><b>Agartala, Tripura — working with brands across India</b></span></div>
+        </div>
+
+        <h2 class="kick reveal mt-12">What happens next</h2>
+        <ol class="next-steps reveal mt-5">
+          <li><span><b>We read your message</b> and look at your brand, your market and what you’ve tried so far.</span></li>
+          <li><span><b>A free discovery call</b> to talk through your goals and whether we’re the right fit.</span></li>
+          <li><span><b>A clear plan and proposal</b> — scope, timeline and cost, before any work starts.</span></li>
+        </ol>
+      </div>
+
+      <!-- right: the form (Netlify Forms) -->
+      <div class="c-card reveal" id="contact-card">
+        <h2 class="display text-3xl md:text-4xl font-bold tracking-tight">Start a project</h2>
+        <p class="mt-2 text-sm" style="color:var(--soft)">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
+
+        <form name="contact" method="POST" action="contact.html?sent=1" data-netlify="true" netlify-honeypot="company_website" class="mt-8 grid gap-6" novalidate id="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hp" aria-hidden="true"><label>Leave this empty <input name="company_website" tabindex="-1" autocomplete="off" /></label></p>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="field" id="f-name">
+              <label for="name">Your name<span class="req" aria-hidden="true">*</span></label>
+              <input class="inp" id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Priya Sharma…" required maxlength="80" aria-describedby="name-err" />
+              <p class="err" id="name-err">Please enter your name.</p>
+            </div>
+            <div class="field" id="f-email">
+              <label for="email">Email<span class="req" aria-hidden="true">*</span></label>
+              <input class="inp" id="email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@company.com…" required maxlength="120" aria-describedby="email-err" />
+              <p class="err" id="email-err">Please enter a valid email address, like you@company.com.</p>
+            </div>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="field" id="f-phone">
+              <label for="phone">Phone number<span class="req" aria-hidden="true">*</span></label>
+              <input class="inp" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210…" required maxlength="20" aria-describedby="phone-hint phone-err" />
+              <p class="hint" id="phone-hint">WhatsApp number preferred.</p>
+              <p class="err" id="phone-err">Please enter a valid phone number (10 digits, with or without +91).</p>
+            </div>
+            <div class="field" id="f-service">
+              <label for="service">Which service do you need?<span class="req" aria-hidden="true">*</span></label>
+              <select class="inp" id="service" name="service" required aria-describedby="service-err">
+                <option value="" disabled selected>Choose a service…</option>
+                <option value="Brand Identity & Strategy" data-key="brand-identity">Brand Identity &amp; Strategy</option><option value="Reels & Short-Form Video" data-key="reels">Reels &amp; Short-Form Video</option><option value="Poster & Campaign Design" data-key="campaign-design">Poster &amp; Campaign Design</option><option value="Performance Marketing" data-key="performance-marketing">Performance Marketing</option><option value="A mix of services" data-key="mix">A mix of services</option><option value="Not sure yet — help me decide" data-key="not-sure">Not sure yet — help me decide</option>
+              </select>
+              <p class="err" id="service-err">Please choose a service — “Not sure yet” is fine.</p>
+            </div>
+          </div>
+
+          <div class="field" id="f-message">
+            <label for="message">Your message<span class="req" aria-hidden="true">*</span></label>
+            <textarea class="inp" id="message" name="message" required maxlength="2000" placeholder="Tell us about your business, what you’d like to achieve and any timelines…" aria-describedby="message-err"></textarea>
+            <p class="err" id="message-err">Please add a short message (at least 10 characters).</p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:justify-between">
+            <button type="submit" class="send" id="send" data-c="link"><span class="spin" aria-hidden="true"></span><span class="lbl">Send Message</span> <span aria-hidden="true">↗</span></button>
+            <p class="text-xs max-w-xs" style="color:var(--soft)">We only use your details to reply to you. No spam, ever.</p>
+          </div>
+          <div class="status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="done" id="form-done" tabindex="-1">
+          <div class="tick-big" aria-hidden="true">✓</div>
+          <h2 class="display text-3xl md:text-4xl font-bold tracking-tight">Thanks<span id="done-name"></span> — message received.</h2>
+          <p class="mt-4 max-w-md mx-auto leading-relaxed" style="color:var(--soft)">We’ll be in touch soon to set up your free discovery call. If it’s urgent, call or WhatsApp us on <a href="tel:+918974332863" class="underline underline-offset-4">+91&nbsp;89743&nbsp;32863</a>.</p>
+          <a href="index.html" class="send mt-8" data-c="link">Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-5 md:px-9 py-14 border-t" style="border-color:var(--line)">
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-7">
+      <p class="max-w-md text-base md:text-lg leading-relaxed">
+        <span class="display font-bold">WebGrow360.</span> A creative agency binding brand, story and data into branding, advertising and marketing that earns attention — and converts it.
+      </p>
+      <div class="text-sm md:text-right" style="color:var(--soft)">
+        <a href="mailto:Connect@team.webgrow360.online" class="block text-base md:text-lg display" style="color:var(--ink)" data-c="link">Connect@team.webgrow360.online</a>
+        <a href="tel:+918974332863" class="block text-base md:text-lg display mt-1" style="color:var(--ink)" data-c="link">+91 89743 32863</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var lenis=null;
+  try{ if(window.Lenis){ lenis=new Lenis({duration:1.1, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true, smoothTouch:false}); requestAnimationFrame(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }); } }catch(e){}
+  document.documentElement.classList.add('ready');
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0.08, rootMargin:'0px 0px -5% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  // cursor
+  var cursor=document.getElementById('cursor');
+  if(window.matchMedia('(min-width:1024px)').matches){
+    var mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+    addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+    (function loop(){ cx+=(mx-cx)*0.18; cy+=(my-cy)*0.18; cursor.style.left=cx+'px'; cursor.style.top=cy+'px'; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover',function(e){ var t=e.target.closest('[data-c]'); cursor.classList.remove('link'); if(t){ cursor.classList.add(t.getAttribute('data-c')); } });
+  }
+
+  // menu
+  var menu=document.getElementById('menu');
+  function closeMenu(){ menu.classList.remove('open'); if(lenis)lenis.start(); }
+  document.getElementById('menu-btn').addEventListener('click',function(){ menu.classList.add('open'); if(lenis)lenis.stop(); });
+  document.getElementById('menu-close').addEventListener('click',closeMenu);
+  document.querySelectorAll('.menu-link').forEach(function(l){ l.addEventListener('click',closeMenu); });
+
+  // header: solid bar once scrolled, hide on scroll down / show on scroll up (as on realestate.webgrow360.online)
+  (function(){
+    var head=document.getElementById('site-head'), mnu=document.getElementById('menu'), last=0;
+    function onScroll(){ var y=window.scrollY||0;
+      head.classList.toggle('scrolled', y>24);
+      head.classList.toggle('hide', y>last && y>320 && !mnu.classList.contains('open'));
+      last=y; }
+    addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  })();
+  addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+
+  // soul
+  document.getElementById('soul-btn').addEventListener('click',function(){
+    var on=document.body.classList.toggle('soul');
+    var tc=document.querySelector('meta[name=theme-color]'); if(tc)tc.setAttribute('content',on?'#070611':'#f3f2ec');
+  });
+
+  // ===== contact form: inline validation, then submit to Netlify Forms without leaving the page =====
+  (function(){
+    var form=document.getElementById('contact-form'); if(!form) return;
+    var card=document.getElementById('contact-card'), status=document.getElementById('form-status'), btn=document.getElementById('send');
+    var sel=document.getElementById('service');
+    // pre-select a service when arriving from a service page (contact.html?service=reels)
+    var q=new URLSearchParams(location.search), key=q.get('service');
+    if(key){ [].forEach.call(sel.options,function(o){ if(o.dataset.key===key) sel.value=o.value; }); }
+    function showDone(name){ document.getElementById('done-name').textContent=name?(', '+name.split(' ')[0]):''; card.classList.add('sent'); var d=document.getElementById('form-done'); d.focus({preventScroll:true}); }
+    if(q.get('sent')==='1') showDone('');
+
+    var rules={
+      name:function(v){ return v.trim().length>=2; },
+      email:function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
+      phone:function(v){ var d=v.replace(/\D/g,''); if(d.length===12&&d.indexOf('91')===0) d=d.slice(2); if(d.length===11&&d[0]==='0') d=d.slice(1); return d.length===10 || (v.trim()[0]==='+' && d.length>=8 && d.length<=15); },
+      service:function(v){ return !!v; },
+      message:function(v){ return v.trim().length>=10; }
+    };
+    function check(name){ var el=form.elements[name], ok=rules[name](el.value), f=document.getElementById('f-'+name);
+      f.classList.toggle('bad',!ok); el.setAttribute('aria-invalid',ok?'false':'true'); return ok; }
+    Object.keys(rules).forEach(function(n){ var el=form.elements[n];
+      el.addEventListener('blur',function(){ if(el.value) check(n); });
+      el.addEventListener('input',function(){ if(document.getElementById('f-'+n).classList.contains('bad')) check(n); });
+      el.addEventListener('change',function(){ if(document.getElementById('f-'+n).classList.contains('bad')) check(n); });
+    });
+
+    function fallback(){
+      var d=new FormData(form), body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nPhone: '+d.get('phone')+'\nService: '+d.get('service')+'\n\n'+d.get('message');
+      var mail='mailto:Connect@team.webgrow360.online?subject='+encodeURIComponent('New enquiry — '+(d.get('service')||'WebGrow360'))+'&body='+encodeURIComponent(body);
+      var wa='https://wa.me/918974332863?text='+encodeURIComponent('Hi WebGrow360, '+body);
+      status.className='status error';
+      status.innerHTML='Sorry — your message couldn’t be sent just now. Nothing is lost: <a href="'+mail+'">send it by email</a> or <a href="'+wa+'" target="_blank" rel="noopener noreferrer">send it on WhatsApp</a> instead.';
+    }
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault(); status.className='status'; status.textContent='';
+      var bad=Object.keys(rules).filter(function(n){ return !check(n); });
+      if(bad.length){ form.elements[bad[0]].focus(); status.textContent='Please fix the highlighted field'+(bad.length>1?'s':'')+'.'; return; }
+      if(form.elements.company_website.value) return;           // bot filled the honeypot
+      btn.disabled=true; btn.classList.add('busy'); btn.querySelector('.lbl').textContent='Sending…';
+      var body=new URLSearchParams(new FormData(form)).toString();
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); showDone(form.elements.name.value.trim()); form.reset(); })
+        .catch(fallback)
+        .then(function(){ btn.disabled=false; btn.classList.remove('busy'); btn.querySelector('.lbl').textContent='Send Message'; });
+    });
+  })();
+})();
+</script>
+</body>
+</html>

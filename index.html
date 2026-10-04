@@ -98,7 +98,14 @@
   .reel-track{ display:flex; gap:16px; width:max-content; animation:reelscroll 60s linear infinite; }
   .reel-track:hover{ animation-play-state:paused; }
   .reel-card{ flex:none; width:150px; aspect-ratio:9/16; border-radius:16px; overflow:hidden; position:relative; background:var(--bg2); }
-  .reel-card video{ width:100%; height:100%; object-fit:cover; }
+  .reel-card{ cursor:pointer; outline:none; transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s; }
+  .reel-card video{ width:100%; height:100%; object-fit:cover; display:block; }
+  .reel-card:hover, .reel-card:focus-visible, .reel-card.playing{ transform:translateY(-6px); box-shadow:0 26px 50px -24px rgba(0,0,0,.55); }
+  .reel-card:focus-visible{ box-shadow:0 0 0 3px var(--accent), 0 26px 50px -24px rgba(0,0,0,.55); }
+  .reel-snd{ position:absolute; left:10px; bottom:10px; padding:5px 10px; border-radius:999px; font-size:11px; font-weight:600; letter-spacing:.02em; color:#fff;
+    background:rgba(20,19,24,.55); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.2); pointer-events:none;
+    opacity:.0; transform:translateY(4px); transition:opacity .3s, transform .3s; }
+  .reel-card:hover .reel-snd, .reel-card:focus-visible .reel-snd, .reel-card.playing .reel-snd{ opacity:1; transform:none; }
   @media(min-width:768px){ .reel-card{ width:240px; } }
 
   /* Industry hover list */
@@ -143,6 +150,11 @@
 
   /* Sticky stack (Services) */
   .stack-card{ position:sticky; border-radius:24px; overflow:hidden; }
+  .svc-link{ display:flex; text-decoration:none; transition:box-shadow .4s cubic-bezier(.16,1,.3,1); }
+  .svc-link .svc-go{ transition:transform .5s cubic-bezier(.16,1,.3,1); }
+  .svc-link:hover .svc-go, .svc-link:focus-visible .svc-go{ transform:rotate(45deg) scale(1.12); }
+  .svc-link:hover{ box-shadow:0 30px 60px -30px rgba(0,0,0,.45); }
+  .svc-link:focus-visible{ outline:3px solid var(--accent); outline-offset:4px; }
 
   #soul-btn{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; position:relative; flex:none;
     border:1px solid var(--line); background:transparent; color:var(--ink); font-size:18px; line-height:1; transition:transform .5s cubic-bezier(.16,1,.3,1), background .4s, color .4s; }
@@ -266,19 +278,19 @@
 <!-- NAV -->
 <header id="site-head">
   <div class="bar">
-    <a href="#top" id="logo" class="wg-logo" data-c="link" aria-label="WEBGROW360 home">
+    <a href="#top" id="logo" class="wg-logo" data-c="link" aria-label="WEBGROW360 ONLINE — home">
       <img src="assets/webgrow360-mark.webp" alt="" aria-hidden="true">
-      <span class="wg-word"><b>WEBGROW360</b><small>ONLINE</small></span>
+      <span class="wg-word"><b>WEBGROW360</b> <small>ONLINE</small></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#industries" class="nav-link" data-c="link">Our Work</a>
       <a href="#services" class="nav-link" data-c="link">Services</a>
       <a href="#solutions" class="nav-link" data-c="link">Solutions</a>
       <a href="about.html" class="nav-link" data-c="link">About Us</a>
-      <a href="#connect" class="nav-link" data-c="link">Contact</a>
+      <a href="contact.html" class="nav-link" data-c="link">Contact</a>
     </nav>
     <div class="flex items-center gap-2">
-      <a href="#connect" class="nav-cta" data-c="link">Start a project</a>
+      <a href="contact.html" class="nav-cta" data-c="link">Start a project</a>
       <button id="soul-btn" data-c="link" aria-label="Toggle soul mode" title="Soul mode">☯</button>
       <button id="menu-btn" data-c="link" aria-label="Open menu"><span class="bars"><span></span><span></span></span>Menu</button>
     </div>
@@ -293,10 +305,10 @@
     <a href="#services" class="menu-link" data-c="link">Services<span class="menu-idx">02</span></a>
     <a href="#solutions" class="menu-link" data-c="link">Solutions<span class="menu-idx">03</span></a>
     <a href="about.html" class="menu-link" data-c="link">About Us<span class="menu-idx">04</span></a>
-    <a href="#connect" class="menu-link" data-c="link">Contact<span class="menu-idx">05</span></a>
+    <a href="contact.html" class="menu-link" data-c="link">Contact<span class="menu-idx">05</span></a>
   </nav>
   <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
-    <a href="#connect" class="inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-sm self-start" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
+    <a href="contact.html" class="inline-flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-sm self-start" style="background:var(--lime);color:#141318" data-c="link">Book a free discovery call ↗</a>
     <div class="text-sm opacity-70">
       <a href="mailto:Connect@team.webgrow360.online" class="block" data-c="link">Connect@team.webgrow360.online</a>
       <a href="tel:+918974332863" class="block mt-1" data-c="link">+91 89743 32863</a>
@@ -358,22 +370,22 @@
   </section>
   <section class="px-5 md:px-9 pb-14">
     <div class="max-w-[1200px] mx-auto" id="svc-stack">
-      <article class="stack-card p-7 md:p-11 min-h-[52vh] flex flex-col justify-between" style="top:90px; background:var(--card); color:var(--card-ink)" data-c="link">
-        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-60">01 · Brand</span><span class="w-10 h-10 rounded-full grid place-items-center" style="background:var(--lime);color:#141318">↗</span></div>
+      <a href="brand-identity.html" class="stack-card svc-link p-7 md:p-11 min-h-[52vh] flex flex-col justify-between" style="top:90px; background:var(--card); color:var(--card-ink)" data-c="link">
+        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-60">01 · Brand</span><span aria-hidden="true" class="svc-go w-10 h-10 rounded-full grid place-items-center" style="background:var(--lime);color:#141318">↗</span></div>
         <div><h3 class="display text-3xl md:text-6xl font-bold mb-3">Brand Identity &amp; Strategy</h3><p class="text-sm md:text-base opacity-75 max-w-xl mb-5">Positioning, naming, logo systems, type and messaging that make you the obvious choice — for consumers and decision-makers alike.</p><div class="flex flex-wrap gap-2 text-xs"><span class="px-3 py-1.5 rounded-full border" style="border-color:rgba(255,255,255,.2)">Positioning</span><span class="px-3 py-1.5 rounded-full border" style="border-color:rgba(255,255,255,.2)">Visual System</span><span class="px-3 py-1.5 rounded-full border" style="border-color:rgba(255,255,255,.2)">Voice</span></div></div>
-      </article>
-      <article class="stack-card p-7 md:p-11 min-h-[52vh] flex flex-col justify-between" style="top:108px; background:var(--accent); color:#fff" data-c="link">
-        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-80">02 · Video</span><span class="w-10 h-10 rounded-full grid place-items-center bg-white text-black">↗</span></div>
+      </a>
+      <a href="reels.html" class="stack-card svc-link p-7 md:p-11 min-h-[52vh] flex flex-col justify-between" style="top:108px; background:var(--accent); color:#fff" data-c="link">
+        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-80">02 · Video</span><span aria-hidden="true" class="svc-go w-10 h-10 rounded-full grid place-items-center bg-white text-black">↗</span></div>
         <div><h3 class="display text-3xl md:text-6xl font-bold mb-3">Reels &amp; Short-Form</h3><p class="text-sm md:text-base opacity-90 max-w-xl mb-5">Hook-first reels, UGC and motion built around the first 1.5 seconds — engineered to stop the thumb and lower cost per result.</p><div class="flex flex-wrap gap-2 text-xs"><span class="px-3 py-1.5 rounded-full border" style="border-color:rgba(255,255,255,.4)">Reels</span><span class="px-3 py-1.5 rounded-full border" style="border-color:rgba(255,255,255,.4)">UGC</span><span class="px-3 py-1.5 rounded-full border" style="border-color:rgba(255,255,255,.4)">Motion</span></div></div>
-      </article>
-      <article class="stack-card p-7 md:p-11 min-h-[52vh] flex flex-col justify-between border" style="top:126px; background:var(--bg2); color:var(--ink); border-color:var(--line)" data-c="link">
-        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-60">03 · Design</span><span class="w-10 h-10 rounded-full grid place-items-center" style="background:var(--accent);color:#fff">↗</span></div>
+      </a>
+      <a href="campaign-design.html" class="stack-card svc-link p-7 md:p-11 min-h-[52vh] flex flex-col justify-between border" style="top:126px; background:var(--bg2); color:var(--ink); border-color:var(--line)" data-c="link">
+        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-60">03 · Design</span><span aria-hidden="true" class="svc-go w-10 h-10 rounded-full grid place-items-center" style="background:var(--accent);color:#fff">↗</span></div>
         <div><h3 class="display text-3xl md:text-6xl font-bold mb-3">Poster &amp; Campaign Design</h3><p class="text-sm md:text-base opacity-75 max-w-xl mb-5">Editorial posters and ad creative with art direction strong enough for a billboard or a phone screen.</p><div class="flex flex-wrap gap-2 text-xs"><span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">Art Direction</span><span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">Ad Creative</span><span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">Print</span></div></div>
-      </article>
-      <article class="stack-card p-7 md:p-11 min-h-[52vh] flex flex-col justify-between" style="top:144px; background:var(--lime); color:#141318" data-c="link">
-        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-60">04 · Growth</span><span class="w-10 h-10 rounded-full grid place-items-center bg-black text-white">↗</span></div>
+      </a>
+      <a href="performance-marketing.html" class="stack-card svc-link p-7 md:p-11 min-h-[52vh] flex flex-col justify-between" style="top:144px; background:var(--lime); color:#141318" data-c="link">
+        <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-widest opacity-60">04 · Growth</span><span aria-hidden="true" class="svc-go w-10 h-10 rounded-full grid place-items-center bg-black text-white">↗</span></div>
         <div><h3 class="display text-3xl md:text-6xl font-bold mb-3">Performance Marketing</h3><p class="text-sm md:text-base opacity-75 max-w-xl mb-5">Paid social, funnels and analytics that close the loop between creative and conversion, so every post is accountable to a number.</p><div class="flex flex-wrap gap-2 text-xs"><span class="px-3 py-1.5 rounded-full border border-black/20">Paid Social</span><span class="px-3 py-1.5 rounded-full border border-black/20">Funnels</span><span class="px-3 py-1.5 rounded-full border border-black/20">Analytics</span></div></div>
-      </article>
+      </a>
     </div>
   </section>
 
@@ -381,19 +393,19 @@
   <section class="py-14 md:py-20 overflow-hidden">
     <div class="px-5 md:px-9 max-w-[1400px] mx-auto flex items-end justify-between mb-6">
       <h2 class="reveal display text-3xl md:text-5xl font-bold tracking-tight">Reels in motion<span style="color:var(--accent)">.</span></h2>
-      <span class="text-sm opacity-50 hidden sm:block">Hook-first · 9:16 · auto-playing</span>
+      <span class="text-sm opacity-50 hidden sm:block">Hook-first · 9:16 · hover to play with sound</span>
     </div>
     <div class="reel-track" id="reel-track">
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-woman-applying-lotion-on-her-face-in-front-of-a-39832-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-woman-applying-lotion-on-her-face-in-front-of-a-39832-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-preparing-a-tasty-burger-with-cheese-and-bacon-41804-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-preparing-a-tasty-burger-with-cheese-and-bacon-41804-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-financial-trading-numbers-and-graphs-3037-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-financial-trading-numbers-and-graphs-3037-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-modern-architecture-building-in-the-city-4384-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-modern-architecture-building-in-the-city-4384-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-medical-animation-of-dna-strands-3064-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-medical-animation-of-dna-strands-3064-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-dj-equipment-with-flashing-lights-9092-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-dj-equipment-with-flashing-lights-9092-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-background-1353-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-background-1353-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-preparing-a-tasty-burger-with-cheese-and-bacon-41804-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-preparing-a-tasty-burger-with-cheese-and-bacon-41804-large.mp4" type="video/mp4"></video></div>
-      <div class="reel-card" data-c="view" data-type="video" data-src="https://assets.mixkit.co/videos/preview/mixkit-financial-trading-numbers-and-graphs-3037-large.mp4"><video autoplay loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-financial-trading-numbers-and-graphs-3037-large.mp4" type="video/mp4"></video></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: The future of healthcare — township launch film"><video src="assets/reels/reel-1.mp4" poster="assets/reels/reel-1.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Titan World — app launch reel"><video src="assets/reels/reel-2.mp4" poster="assets/reels/reel-2.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Founder podcast — talking-head reel"><video src="assets/reels/reel-3.mp4" poster="assets/reels/reel-3.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Ecoleaves — eco-friendly tableware reel"><video src="assets/reels/reel-4.mp4" poster="assets/reels/reel-4.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: On-location presenter reel"><video src="assets/reels/reel-5.mp4" poster="assets/reels/reel-5.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Residential project walkthrough reel"><video src="assets/reels/reel-6.mp4" poster="assets/reels/reel-6.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Snack on Loop — snack brand reel"><video src="assets/reels/reel-7.mp4" poster="assets/reels/reel-7.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Caiva — product walkthrough reel"><video src="assets/reels/reel-8.mp4" poster="assets/reels/reel-8.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Floor sweeper — warehouse product demo"><video src="assets/reels/reel-9.mp4" poster="assets/reels/reel-9.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
+      <div class="reel-card" data-c="view" tabindex="0" role="button" aria-label="Play reel: Yummy Fried Chicken — menu reel"><video src="assets/reels/reel-10.mp4" poster="assets/reels/reel-10.webp" preload="none" loop playsinline></video><span class="reel-snd" aria-hidden="true">Hover to play</span></div>
     </div>
   </section>
 
@@ -713,7 +725,7 @@
   <section id="connect" class="px-5 md:px-9 py-20 md:py-28 text-center">
     <div class="max-w-[1000px] mx-auto">
       <h2 class="reveal display text-4xl md:text-[6vw] font-bold leading-[0.95] md:leading-[0.92] tracking-tight">Ready to make your name <span class="pill">impossible</span> to ignore?</h2>
-      <a href="mailto:Connect@team.webgrow360.online?subject=Discovery%20Call" class="reveal group inline-flex items-center gap-3 mt-10 px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold text-base md:text-lg" style="background:var(--ink);color:var(--bg)" data-c="link">
+      <a href="contact.html" class="reveal group inline-flex items-center gap-3 mt-10 px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold text-base md:text-lg" style="background:var(--ink);color:var(--bg)" data-c="link">
         Book a free discovery call <span class="w-7 h-7 rounded-full grid place-items-center transition-transform duration-500 group-hover:rotate-45" style="background:var(--lime);color:#141318">↗</span>
       </a>
       <p class="reveal mt-8 text-sm max-w-md mx-auto" style="color:var(--soft)">We onboard a limited number of clients each month to protect the quality of the work.</p>
@@ -970,6 +982,52 @@
   }
 
   var rt=document.getElementById('reel-track'); if(rt){ rt.innerHTML += rt.innerHTML; }
+
+  // Reels: a reel plays only while it is hovered (or focused / tapped), one at a time, with sound.
+  // Browsers block sound until the visitor has clicked or tapped the page once, so until then the
+  // reel plays muted and a click on it switches the sound on.
+  (function(){
+    if(!rt) return;
+    var cards=[].slice.call(rt.querySelectorAll('.reel-card')), half=cards.length/2, current=null;
+    var canHover=window.matchMedia('(hover: hover)').matches;
+    cards.forEach(function(c,i){ if(i>=half){ c.setAttribute('aria-hidden','true'); c.tabIndex=-1; } });   // loop copies
+    function label(card){ var v=card.querySelector('video'), b=card.querySelector('.reel-snd'); if(b) b.textContent = v.paused ? (canHover?'Hover to play':'Tap to play') : (v.muted ? 'Click for sound' : 'Sound on'); }
+    function stop(card){ var v=card.querySelector('video'); v.pause(); card.classList.remove('playing'); if(current===card) current=null; label(card); }
+    function start(card){
+      var v=card.querySelector('video');
+      if(current && current!==card) stop(current);
+      current=card; card.classList.add('playing');
+      v.muted=false;
+      var p=v.play();
+      if(p && p.then){ p.then(function(){ label(card); }, function(err){
+        // only fall back to muted playback when sound was blocked and this reel is still the hovered one
+        // (an AbortError just means the visitor moved on before play() resolved)
+        if(err && err.name==='NotAllowedError' && current===card){ v.muted=true; v.play().then(function(){ if(current!==card) stop(card); label(card); }, function(){}); }
+        label(card);
+      }); }
+      label(card);
+    }
+    cards.forEach(function(card){
+      var v=card.querySelector('video');
+      v.addEventListener('playing',function(){ label(card); }); v.addEventListener('volumechange',function(){ label(card); });
+      if(canHover){
+        card.addEventListener('mouseenter',function(){ start(card); });
+        card.addEventListener('mouseleave',function(){ stop(card); });
+      }
+      card.addEventListener('focus',function(){ if(canHover) start(card); });
+      card.addEventListener('blur',function(){ if(current===card) stop(card); });
+      function toggle(){
+        if(current!==card || v.paused){ start(card); return; }       // touch: tap to play
+        if(v.muted){ v.muted=false; return; }                           // click turns the sound on
+        if(canHover){ v.muted=true; } else { stop(card); }             // second click mutes (touch: stops)
+      }
+      card.addEventListener('click',toggle);
+      card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+    });
+    // pause if the reels scroll out of view or the tab is hidden
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(en){ if(!en[0].isIntersecting && current) stop(current); }).observe(rt); }
+    document.addEventListener('visibilitychange',function(){ if(document.hidden && current) stop(current); });
+  })();
 
   var peek=document.getElementById('peek'), imgs=[], pIdx=0, pTimer=null, pOn=false;
   document.querySelectorAll('.ind-row').forEach(function(row){
